@@ -1,52 +1,90 @@
-# Astro Starter Kit: Basics
+# 🛰️ Project Equirizon
 
-```sh
-npm create astro@latest -- --template basics
-```
+> Personal portfolio, but make it feel like a flagship product launch.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Welcome to **Project Equirizon** — not just a developer portfolio, but a hyper-curated experience designed to present _myself_ (Brandon Bustria)
+Built from scratch using modern web tech with speed, clarity, and vibes in mind.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Think of it as:  
+👨‍💻 **Software Dev.**  
+🎵 **Music Maker.**  
+🏋️ **Iron Pusher.**  
+But make it interactive, performant, and hosted on the edge.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+---
 
-## 🚀 Project Structure
+## 🔗 Brandon Bustria – Portfolio
 
-Inside of your Astro project, you'll see the following folders and files:
+🌐 [https://equirizon.dev](https://equirizon.dev) _(Coming soon)_
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+### 📦 Portfolio Tech Stack
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+| Area           | Tech                                                                 |
+|----------------|----------------------------------------------------------------------|
+| Framework      | [Astro](https://astro.build) – Static-first with partial hydration   |
+| Styling        | [Tailwind CSS](https://tailwindcss.com) + SCSS Modules (where needed)|
+| Content        | Markdown + Astro Content Collections                                 |
+| Hosting        | [Cloudflare Pages](https://pages.cloudflare.com)                     |
+| Animations     | Astro Motion / Framer Motion (for microinteractions + flow)          |
+| Fonts          | Self-hosted via Google Fonts Helper + `font-display: swap`           |
+| Forms          | Web3Forms or Cloudflare Worker (still deciding)                      |
+| Tooling        | Vite, TypeScript, GitHub Actions, Custom OG generator (planned)      |
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## 🧩 Features
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- ⚡️ Ultra-fast load times with zero-runtime components
+- 🎯 Clear project breakdowns with visual polish
+- 🎨 Fluid animations without overkill
+- 🌗 Adaptive theming (dark/light mode — coming soon)
+- 🧠 Designed like a product, not a résumé
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🧪 In Development
+
+- [ ] Custom OG Image generator (for dynamic link previews)
+- [ ] PWA support + offline experience
+- [ ] Personal blog / tech notes section
+- [ ] Contact form with spam filtering
+- [ ] Interactive command-line mode (maybe 👀)
+
+---
+
+## 🛠️ Side Projects
+
+### 1. **AI-Powered Discord Bot** _(WIP)_  
+
+An intelligent Discord companion that acts more like a **friend** than a bot.  
+Designed to understand natural conversation and handle:
+
+- Dynamic conversations
+- Commands without feeling like commands
+- Low-key AI assistant functions
+
+Think J.A.R.V.I.S., but with Discord Nitro.
+
+### 2. **Barangay Management System**  
+
+Built for real-world admin use, this full-stack web app powers local barangay ops.  
+Live at: [barangay-system-website.vercel.app](https://barangay-system-website.vercel.app)
+
+---
+
+## 📡 About Me
+
+I'm Brandon Bustria — a Computer Engineering grad who builds things that are clean, fast, and functional.  
+I write code to support my two other life pillars: 🎧 **music production** and 🏋️ **fitness**.
+
+> "Work on yourself like you're your own most ambitious project. Can't stop won't stop, Also never settle."  
+
+---
+
+## 📬 Let's Connect
+
+- 🐙 GitHub: [@Equirizon](https://github.com/Equirizon)
+- 💼 LinkedIn: [Don Bustria](https://linkedin.com/in/donbustria/)
+- 🎵 SoundCloud: [soundcloud.com/equirizon](https://soundcloud.com/equirizon)
+
+---
