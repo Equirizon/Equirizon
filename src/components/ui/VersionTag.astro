@@ -1,0 +1,18 @@
+---
+import projectPackage from '@package'
+
+const appVersion = projectPackage.version
+---
+
+<style>
+  .appVersion {
+    background-color: white;
+    color: $color-secondary;
+    padding: $padding-xsm $padding-sm;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+  }
+</style>
+
+<span class='font-bold text-xs text-gray-400'>v{appVersion}</span>

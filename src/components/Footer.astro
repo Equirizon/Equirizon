@@ -1,0 +1,13 @@
+---
+import VersionTag from './ui/VersionTag.astro'
+
+const date = new Date()
+const year = date.getFullYear()
+---
+
+<section
+  id='footer'
+  class='bg-none w-full h-16 flex flex-row gap-7 justify-evenly items-center shadow-2xs border-t border-t-gray-300 backdrop-blur-xl bg-linear-60 from-fuchsia-100/70 to-sky-100/70'>
+  <div class='font-bold text-xs text-gray-400'>@Equirizon {year}</div>
+  <VersionTag />
+</section>

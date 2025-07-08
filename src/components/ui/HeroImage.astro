@@ -1,0 +1,29 @@
+---
+import Image from 'astro/components/Image.astro'
+import Bottom from '@assets/svg/bottom.svg'
+import Top from '@assets/svg/top.svg'
+import Background from '@assets/hero-bg.png'
+import Cutout from '@assets/me-cutout.png'
+---
+
+<div class='relative aspect-square w-lg'>
+  <svg
+    class='absolute top-0 left-0 w-full h-full pointer-events-none z-10'
+    viewBox='0 0 512 512'
+    preserveAspectRatio='xMidYMid meet'>
+    <defs>
+      <mask id='scrollMask' maskUnits='userSpaceOnUse' x='0' y='0' width='512' height='512'>
+        <rect width='100%' height='100%' fill='black'></rect>
+        <Top />
+      </mask>
+    </defs>
+  </svg>
+  <div class='absolute w-full h-full z-0' style='mask: url(#scrollMask); -webkit-mask: url(#scrollMask);'>
+    <Image src={Background} alt='palm tree background' class='absolute w-full aspect-auto' />
+  </div>
+  <Image
+    src={Cutout}
+    alt='its me'
+    class='absolute w-full left-1/2 -translate-x-1/2 mask-[url(/src/assets/svg/bottom.svg)] mask-luminance mask-exclude mask-contain mask-no-repeat'
+  />
+</div>
