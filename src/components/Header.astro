@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets'
+import logo from '../assets/logo.png'
+import Github from './icons/github.astro'
+import Linkedin from './icons/linkedin.astro'
+import Soundcloud from './icons/soundcloud.astro'
+---
+
+<div class='flex flex-row items-center gap-4 rounded-2xl w-3xs'>
+  <Image src={logo} alt='' class='w-auto h-12 rounded-4xl' />
+  <h1 class='font-bold text-lg'>Brandon | Equirizon</h1>
+</div>
+<nav id='navbar' class='flex flex-row gap-10'>
+  <a href='#header' class='nav-link' id='about'>About</a>
+  <a href='#footer' class='nav-link' id='portfolio'>Portfolio</a>
+  <a href='#footer' class='nav-link' id='hobbies'>Hobbies</a>
+  <a href='#footer' class='nav-link' id='contacts'>Contact</a>
+</nav>
+<div class='flex flex-row justify-center items-center gap-8 w-60'>
+  <a href='https://github.com/Equirizon' target='_blank' rel='noopener noreferrer'><Github /></a>
+  <a href='https://linkedin.com/in/donbustria/' target='_blank' rel='noopener noreferrer'><Linkedin /></a>
+  <a href='https://soundcloud.com/equirizon' target='_blank' rel='noopener noreferrer'><Soundcloud /></a>
+</div>
