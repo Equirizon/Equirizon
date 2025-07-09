@@ -1,7 +1,6 @@
 'use client'
 
-import throttle from '@/utils/throttle'
-import { useScroll, useMotionValueEvent, motion, useTransform, MotionValue, useSpring } from 'motion/react'
+import { useScroll, useMotionValueEvent, motion } from 'motion/react'
 import { useState } from 'react'
 
 export default function HeroImage() {
