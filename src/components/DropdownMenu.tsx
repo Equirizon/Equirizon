@@ -14,7 +14,7 @@ export default function DropdownMenu() {
       <DropdownMenuTrigger asChild>
         <Menu className='lg:hidden w-10' />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='mx-2 bg-linear-60 from-fuchsia-100/50 to-sky-100/50 shadow-md backdrop-blur-lg'>
+      <DropdownMenuContent className='mx-2 bg-white/80 backdrop-blur-md'>
         <DropdownMenuLabel>Equirizon</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Home</DropdownMenuItem>

@@ -4,22 +4,39 @@ import Linkedin from './icons/linkedin.astro'
 import Logo from '@assets/svg/logo.svg'
 import Soundcloud from './icons/soundcloud.astro'
 import DropdownMenu from './DropdownMenu'
+import { ThemeToggle } from './ThemeToggle'
 ---
 
 <div class='flex w-max flex-row items-center gap-4'>
   <Logo class='size-10 md:size-9' />
   <h1 class='hidden text-lg font-bold lg:inline'>Brandon | Equirizon</h1>
 </div>
-<h1 class='text-md font-bold md:inline lg:hidden'>Brandon | Equirizon</h1>
+<h1 class='font-bold md:inline lg:hidden'>Brandon | Equirizon</h1>
 <nav id='navbar' class='hidden flex-row gap-10 lg:flex'>
-  <a href='#hero' class='nav-link' id='about'>About</a>
-  <a href='#projects' class='nav-link' id='portfolio'>Projects</a>
-  <a href='#footer' class='nav-link' id='hobbies'>Hobbies</a>
-  <a href='#footer' class='nav-link' id='contacts'>Contact</a>
+  <a href='#hero' class='hover:text-accent-foreground transition-all' id='about'>About</a>
+  <a href='#projects' class='hover:text-accent-foreground transition-all' id='portfolio'>Projects</a>
+  <a href='#footer' class='hover:text-accent-foreground transition-all' id='hobbies'>Hobbies</a>
+  <a href='#footer' class='hover:text-accent-foreground transition-all' id='contacts'>Contact</a>
 </nav>
-<div class='hidden flex-row items-center justify-between gap-8 lg:flex'>
-  <a href='https://github.com/Equirizon' target='_blank' rel='noopener noreferrer'><Github /></a>
-  <a href='https://linkedin.com/in/donbustria/' target='_blank' rel='noopener noreferrer'><Linkedin /></a>
-  <a href='https://soundcloud.com/equirizon' target='_blank' rel='noopener noreferrer'><Soundcloud /></a>
+<div class='hidden w-56 flex-row items-center justify-end gap-8 lg:flex'>
+  <a
+    href='https://github.com/Equirizon'
+    target='_blank'
+    rel='noopener noreferrer'
+    class='hover:bg-accent/30 hover:text-accent-foreground transition-all'><Github /></a
+  >
+  <a
+    href='https://linkedin.com/in/donbustria/'
+    target='_blank'
+    rel='noopener noreferrer'
+    class='hover:bg-accent/30 hover:text-accent-foreground transition-all'><Linkedin /></a
+  >
+  <a
+    href='https://soundcloud.com/equirizon'
+    target='_blank'
+    rel='noopener noreferrer'
+    class='hover:bg-accent/30 hover:text-accent-foreground transition-all'><Soundcloud /></a
+  >
+  <ThemeToggle client:load />
 </div>
-<DropdownMenu client:only='react' />
+<DropdownMenu client:load />
