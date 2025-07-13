@@ -2,17 +2,17 @@
 import HeroImage from './ui/HeroImage.tsx'
 ---
 
-<section id='hero' class='flex flex-col justify-center items-center gap-10 h-screen w-full'>
-  <div class='flex flex-row mx-auto w-[min(85vw,70rem)] justify-between items-center'>
+<section id='hero' class='flex min-h-[45rem] h-screen w-full flex-col items-center justify-center gap-10 lg:pt-12'>
+  <div class='mx-auto flex w-[min(85vw,70rem)] flex-col-reverse items-center justify-between xl:flex-row'>
     <div class='flex flex-col gap-1'>
       <h4 class='font-bold text-gray-600'>Welcome to my Personal Portfolio</h4>
-      <h1 class='max-w-lg text-5xl bg-clip-text text-gray-800 text-shadow-lg font-bold'>
+      <h1 class='max-w-lg bg-clip-text text-3xl font-bold text-gray-800 text-shadow-lg lg:text-5xl'>
         Hello, my name's <span
-          class='font-extrabold bg-linear-to-b from-fuchsia-700 to-indigo-900 text-transparent bg-clip-text text-shadow-lg'
+          class='bg-linear-to-b from-fuchsia-700 to-indigo-900 bg-clip-text font-extrabold text-transparent text-shadow-lg'
           >Brandon</span
         >
       </h1>
-      <h4 class='text-gray-600 font-normal *:border-gray-400 divide-x-2 *:px-2 mt-4'>
+      <h4 class='mt-4 divide-x-2 font-normal text-gray-600 *:border-gray-400 *:px-2'>
         I'm a<span class='text-sky-800'>Front-end Developer</span><span class='text-orange-800'>Music Producer</span
         ><span class='text-green-800'>Graphic Designer</span>
       </h4>

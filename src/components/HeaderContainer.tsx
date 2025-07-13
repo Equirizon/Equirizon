@@ -1,7 +1,7 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import throttle from '@/utils/throttle'
-import clsx from 'clsx'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 import { useState } from 'react'
 
@@ -19,9 +19,11 @@ export default function HeaderContainer({ children }: { children: React.ReactNod
 
   return (
     <header
-      className={clsx(
-        'fixed top-0 left-0 flex w-dvw flex-row items-center justify-between text-sm font-medium text-gray-600 duration-250 ease-in-out z-10',
-        onTop ? 'px-[calc((100%-70rem)/2)] py-11' : 'bg-linear-60 from-fuchsia-100/70 to-sky-100/70 py-4 px-16 shadow-md backdrop-blur-xl',
+      className={cn(
+        'fixed top-0 left-0 z-10 flex w-full flex-row items-center justify-between p-3 text-sm font-medium text-gray-600 duration-250 ease-in-out',
+        onTop
+          ? 'lg:p-12 xl:px-[calc((100%-70rem)/2)]'
+          : 'bg-linear-60 from-fuchsia-100/70 to-sky-100/70 shadow-md backdrop-blur-xl lg:px-12 xl:px-[calc((100%-85rem)/2)]',
       )}>
       {children}
     </header>
