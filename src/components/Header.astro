@@ -7,18 +7,20 @@ import DropdownMenu from './DropdownMenu'
 import { ThemeToggle } from './ThemeToggle'
 ---
 
-<div class='flex w-max flex-row items-center gap-4'>
-  <Logo class='size-10 md:size-9' />
-  <h1 class='hidden text-lg font-bold lg:inline'>Brandon | Equirizon</h1>
+<div class='flex w-max pe-12 flex-row items-center gap-4'>
+  <a href='#hero' class='transition-all hover:scale-105 duration-200'>
+    <Logo class='size-10 md:size-9' />
+  </a>
+  <h1 class='hidden text-lg font-bold lg:inline'>Equirizon</h1>
 </div>
 <h1 class='font-bold md:inline lg:hidden'>Brandon | Equirizon</h1>
 <nav id='navbar' class='hidden flex-row gap-10 lg:flex'>
-  <a href='#hero' class='hover:text-accent-foreground transition-all' id='about'>About</a>
-  <a href='#projects' class='hover:text-accent-foreground transition-all' id='portfolio'>Projects</a>
-  <a href='#footer' class='hover:text-accent-foreground transition-all' id='hobbies'>Hobbies</a>
-  <a href='#footer' class='hover:text-accent-foreground transition-all' id='contacts'>Contact</a>
+  <a href='#about' class='hover:text-accent-foreground transition-all'>About</a>
+  <a href='#projects' class='hover:text-accent-foreground transition-all'>Projects</a>
+  <a href='#footer' class='hover:text-accent-foreground transition-all'>Hobbies</a>
+  <a href='#footer' class='hover:text-accent-foreground transition-all'>Contact</a>
 </nav>
-<div class='hidden w-56 flex-row items-center justify-end gap-8 lg:flex'>
+<div class='hidden flex-row items-center justify-end gap-8 lg:flex'>
   <a
     href='https://github.com/Equirizon'
     target='_blank'

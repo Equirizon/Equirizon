@@ -1,0 +1,74 @@
+---
+import Picture from 'astro/components/Picture.astro'
+import Art from '@assets/cover-art.png'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Separator } from '@/components/ui/separator'
+import { Button } from './ui/button'
+---
+
+<section id='about' class='flex h-screen min-h-[45rem] w-full flex-col items-center justify-evenly'>
+  <div
+    class='bg-theme-color-secondary/10 flex h-4/5 w-[min(85vw,65rem)] flex-col items-center justify-between shadow-xl lg:h-3/5 lg:flex-row'>
+    <div class='flex aspect-auto h-1/4 flex-row items-center justify-center overflow-clip lg:h-full lg:w-2/4'>
+      <Picture
+        src={Art}
+        formats={['avif', 'webp']}
+        alt='Cover Album Art'
+        width={1000}
+        height={1000}
+        class='lg:scale-190'
+      />
+    </div>
+    <div class='flex h-3/4 w-full flex-col justify-between p-6 lg:h-full lg:p-10'>
+      <div>
+        <h1 class='text-accent-foreground text-3xl font-extrabold'>About Me</h1>
+        <h3 class='text-theme-color-primary text-xl font-bold'>Brandon Bustria - Front-end Web Developer</h3>
+      </div>
+      <ScrollArea
+        className='*:text-muted-foreground w-[calc(100% + pe-4)] flex h-3/4 pe-4 text-justify transition-all *:text-sm lg:h-9/11 lg:w-auto'
+        client:only='react'>
+        <p>
+          I've always been obsessed with how things are made, whether it's a UI, a song, or even circuits on a
+          breadboard. My creative journey started with design tools like Photoshop and Illustrator, where I'd spend
+          hours making logos, banners, and icons. I had this personal rule: “Only use original work.” That mindset
+          pushed me to learn everything myself and take pride in what I created, visuals that I could fully call mine.
+        </p>
+        <Separator className='my-4' />
+        <p>
+          My first spark for web development came in high school. We were introduced to HTML, and before our teacher
+          could even get to CSS, I was already deep into keyframes and animations. While others were submitting basic
+          static pages, I was building flashy, interactive layouts after class for fun. That thrill of seeing something
+          come alive on screen, that's what hooked me. Despite my roots in design, I see myself primarily as a
+          developer. It might sound ironic, but while I love aesthetics, I'm more wired for engineering. I even spent
+          time tinkering with Arduino microcontrollers, wiring up sensors and displays just to understand how things
+          work beneath the surface. That curiosity for systems naturally bled into how I write code, always digging a
+          little deeper, always trying to connect the dots.
+        </p>
+        <Separator className='my-4' />
+        <p>
+          What energizes me most is watching an idea from my head take shape in the browser. Nothing beats the moment
+          when design and function click. And when things break? That just means it's not done yet.
+        </p>
+        <Separator className='my-4' />
+        <p>
+          I'll admit, creativity doesn't always come easy for me. I struggle to invent things from scratch, but I care
+          deeply about how things look, feel, and behave. Maybe that's why front-end development feels like home: it's
+          the balance of logic and aesthetics, of math and meaning.
+        </p>
+        <Separator className='my-4' />
+        <p>
+          Outside of coding, I've also branched into music production, another creative outlet that lets me design not
+          just visually, but in terms of materializing dreams. It's like the same mindset, just translated into sound.
+        </p>
+        <Separator className='my-4' />
+        <p>
+          Right now, I'm actively looking for work, particularly roles that let me bring strong UI/UX ideas to life in
+          real-world products. I recently built and deployed a full-stack Barangay Management Web App using Next.js and
+          Supabase, which you can check out <a href='https://barangay-system-website.vercel.app/'>
+            <Button variant='link' size='icon'>here.</Button></a
+          >
+        </p>
+      </ScrollArea>
+    </div>
+  </div>
+</section>

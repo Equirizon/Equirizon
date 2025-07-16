@@ -1,5 +1,8 @@
 ---
 import '@/styles/global.css'
+import Header from '@/components/Header.astro'
+import HeaderContainer from '@/components/ui/HeaderContainer'
+import Footer from '@/components/Footer.astro'
 ---
 
 <script is:inline>
@@ -30,6 +33,10 @@ import '@/styles/global.css'
     <title>Brandon | Equirizon</title>
   </head>
   <body>
+    <HeaderContainer client:load>
+      <Header />
+    </HeaderContainer>
     <slot />
+    <Footer />
   </body>
 </html>

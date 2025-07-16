@@ -2,8 +2,8 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:where(.dark, .dark *));
-
-/* * {
+/* 
+section {
   outline: 1px solid magenta !important;
 } */
 
@@ -74,23 +74,22 @@ body {
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(96.185% 0.02494 311.547);
   --foreground: oklch(13.882% 0.05539 315.022);
-  --background-gradient: oklch(98.483% 0.0907 315.022);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
+  --popover: oklch(99.31% 0.00351 248.593);
   --popover-foreground: oklch(0.129 0.042 264.695);
   --primary: oklch(0.208 0.042 265.755);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(94.601% 0.00942 243.157);
+  --muted-foreground: oklch(46.255% 0.0487 256.369);
+  --accent: oklch(95.614% 0.03911 325.748);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
+  --border: oklch(61.858% 0.00722 16.817 / 0.534);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -148,8 +147,8 @@ body {
   --typescript: #2b6dbf;
   --soundcloud: #ff5500;
   --graphics: oklch(72.3% 0.219 149.579);
-  --theme-color-primary: #25B2F1;
-  --theme-color-secondary: #970EC5;
+  --theme-color-primary: #25b2f1;
+  --theme-color-secondary: #970ec5;
 }
 
 @layer base {
