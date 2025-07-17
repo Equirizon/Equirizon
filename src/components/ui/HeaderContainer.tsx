@@ -23,7 +23,7 @@ export default function HeaderContainer({ children }: { children: React.ReactNod
         'text-muted-foreground fixed top-0 left-0 z-10 flex w-full flex-row items-center justify-between p-3 text-sm font-medium duration-250 ease-in-out',
         onTop
           ? 'bg-mu lg:p-12 xl:px-[calc((100%-70rem)/2)]'
-          : 'bg-linear-60 from-fuchsia-100/70 to-sky-100/70 shadow-md backdrop-blur-xl lg:px-12 xl:px-24 dark:from-fuchsia-950/70 dark:to-indigo-950/70',
+          : 'bg-linear-60 from-fuchsia-200/70 to-sky-200/70 shadow-md backdrop-blur-xl lg:px-12 xl:px-24 dark:from-fuchsia-950/70 dark:to-indigo-950/70',
       )}>
       {children}
     </header>

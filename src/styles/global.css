@@ -27,6 +27,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 @theme inline {
@@ -86,7 +91,7 @@ body {
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(46.255% 0.0487 256.369);
-  --accent: oklch(95.614% 0.03911 325.748);
+  --accent: oklch(95.021% 0.02557 325.579);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(61.858% 0.00722 16.817 / 0.534);
