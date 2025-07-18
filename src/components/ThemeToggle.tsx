@@ -26,7 +26,7 @@ export function ThemeToggle() {
           <span className='sr-only'>Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='bg-popover/70 text-muted-foreground backdrop-blur-lg' align='end'>
+      <DropdownMenuContent className='bg-theme-secondary-accent/70 text-muted-foreground backdrop-blur-lg' align='end'>
         <DropdownMenuItem onClick={() => setThemeState('theme-light')}>
           <Sun /> Light {theme === 'theme-light' ? <Check size={15} className='ml-auto' /> : ''}
         </DropdownMenuItem>

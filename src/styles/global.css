@@ -34,6 +34,19 @@ body {
     box-shadow 0.3s ease-in-out;
 }
 
+@theme {
+  --animate-slide-in: slide-in 400ms ease-out both;
+
+  @keyframes slide-in {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -75,6 +88,8 @@ body {
   --color-graphics: var(--graphics);
   --color-theme-color-primary: var(--theme-color-primary);
   --color-theme-color-secondary: var(--theme-color-secondary);
+  --color-theme-primary-accent: var(--theme-primary-accent);
+  --color-theme-secondary-accent: var(--theme-secondary-accent);
 }
 
 :root {
@@ -91,7 +106,7 @@ body {
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(46.255% 0.0487 256.369);
-  --accent: oklch(95.021% 0.02557 325.579);
+  --accent: oklch(98.457% 0.01355 325.294);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(61.858% 0.00722 16.817 / 0.534);
@@ -115,6 +130,8 @@ body {
   --graphics: oklch(72.3% 0.219 149.579);
   --theme-color-primary: #6956f4;
   --theme-color-secondary: #fd69ff;
+  --theme-primary-accent: oklch(0.8653 0.0673 281.86);
+  --theme-secondary-accent: oklch(0.9437 0.0484 327.14);
 }
 
 .dark {
@@ -154,6 +171,8 @@ body {
   --graphics: oklch(72.3% 0.219 149.579);
   --theme-color-primary: #25b2f1;
   --theme-color-secondary: #970ec5;
+  --theme-primary-accent: oklch(0.1718 0.0472 234.53);
+  --theme-secondary-accent: oklch(0.1762 0.0652 302.23);
 }
 
 @layer base {
