@@ -36,7 +36,6 @@ body {
 
 @theme {
   --animate-slide-in: slide-in 400ms ease-out both;
-
   @keyframes slide-in {
     0% {
       transform: translateY(100%);
@@ -45,6 +44,11 @@ body {
       transform: translateY(0);
     }
   }
+}
+
+:root {
+  --interative-feature-card-lg: 25rem;
+  --interative-feature-card: 20rem;
 }
 
 @theme inline {

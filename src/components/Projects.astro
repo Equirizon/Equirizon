@@ -1,14 +1,12 @@
 ---
-import CardIOS from '@ui/ios-card'
-import Art from '@/images/cover-art.png'
+import InteractiveFeatureCard from '@/components/ui/InteractiveFeatureCard'
+import Art from '@/images/me.jpg'
 import Picture from 'astro/components/Picture.astro'
 ---
 
-<section id='projects' class='relative flex h-min min-h-[75rem] w-full flex-col items-center justify-evenly'>
+<section id='projects' class='relative flex h-min min-h-[75rem] w-full flex-col items-center justify-start'>
   <div id='projects-header'>
     <h2 class='text-3xl font-extrabold'>My Projects</h2>
   </div>
-  <CardIOS client:load>
-    <Picture src={Art} alt='Equirizon' width={1000} />
-  </CardIOS>
+
 </section>

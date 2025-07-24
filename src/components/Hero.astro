@@ -4,7 +4,26 @@ import { Button } from './ui/button'
 import HeroImage from './ui/HeroImage.tsx'
 ---
 
-<style>
+<!-- <script> TODO
+  const texts = document.querySelectorAll('.observe')
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100')
+      } else {
+        entry.target.classList.remove('opacity-100')
+      }
+    })
+  })
+
+  texts.forEach((text) => {
+    observer.observe(text)
+    
+  })
+</script> -->
+
+<style is:inline>
   :root {
     --hero-min-height: 50rem;
   }
