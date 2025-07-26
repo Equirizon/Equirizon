@@ -8,7 +8,7 @@ export default function HeroImage() {
   const [parallax, setParallax] = useState(0)
 
   useMotionValueEvent(scrollYProgress, 'change', (value) => {
-    setParallax(value * 200)
+    setParallax(value * 400)
   })
 
   return (

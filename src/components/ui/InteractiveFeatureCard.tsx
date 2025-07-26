@@ -78,13 +78,13 @@ export default function InteractiveFeatureCard({
         <motion.div
           layoutId={`${layoutIdPrefix}-card`}
           className={cn(
-            'relative flex h-[var(--interative-feature-card)] lg:h-[var(--interative-feature-card-lg)] w-[min(100%,90vw)] flex-col items-center overflow-hidden rounded-xl',
+            'relative flex h-[var(--interactive-feature-card)] lg:h-[var(--interactive-feature-card-lg)] w-[min(100%,90vw)] flex-col items-center overflow-hidden rounded-xl',
             expandedDelay ? 'z-11' : 'z-1',
             className,
           )}>
           <motion.div
             layoutId={`${layoutIdPrefix}-mask`}
-            className='absolute top-0 left-0 flex h-[var(--interative-feature-card)] lg:h-[var(--interative-feature-card-lg)] w-full flex-row items-center overflow-hidden'>
+            className='absolute top-0 left-0 flex h-[var(--interactive-feature-card)] lg:h-[var(--interactive-feature-card-lg)] w-full flex-row items-center overflow-hidden'>
             <Header layoutIdPrefix={layoutIdPrefix} expanded={expanded} />
             <div className='transition-all duration-200 hover:scale-101'>
               <Content layoutIdPrefix={layoutIdPrefix}>{children}</Content>
@@ -100,10 +100,10 @@ export default function InteractiveFeatureCard({
         <motion.div
           layoutId={`${layoutIdPrefix}-card`}
           className='fixed top-1/2 left-1/2 z-11 flex h-auto w-[min(45rem,90vw)] -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-xl outline-0'>
-          <div className='h-[var(--interative-feature-card)] md:h-[var(--interative-feature-card-lg)] '>
+          <div className='h-[var(--interactive-feature-card)] md:h-[var(--interactive-feature-card-lg)] '>
             <motion.div
               layoutId={`${layoutIdPrefix}-mask`}
-              className='absolute top-0 left-0 z-1 flex w-full flex-row items-start overflow-hidden h-[var(--interative-feature-card)] md:h-[var(--interative-feature-card-lg)] '>
+              className='absolute top-0 left-0 z-1 flex w-full flex-row items-start overflow-hidden h-[var(--interactive-feature-card)] md:h-[var(--interactive-feature-card-lg)] '>
               <Header layoutIdPrefix={layoutIdPrefix} expanded={expanded} />
               <Content layoutIdPrefix={layoutIdPrefix}>{children}</Content>
             </motion.div>

@@ -7,11 +7,13 @@ import WallpaperMobile from '@/images/wallpaper-mobile.png'
 import Icon from '@/images/icon.png'
 ---
 
-<section id='passions' class='relative flex h-min min-h-[75rem] w-full flex-col items-center justify-start'>
+<section
+  id='passions'
+  class='relative flex h-min min-h-[75rem] w-full flex-col items-center justify-center gap-16 py-[10rem]'>
   <div id='passions-header'>
-    <h2 class='mb-28 text-3xl font-extrabold'>My Hobbies</h2>
+    <h2 class='text-3xl font-extrabold'>My Hobbies</h2>
   </div>
-  <div class='grid w-[min(75rem,95vw)] grid-cols-1 gap-4 bg-pink-100 p-4 md:grid-cols-2'>
+  <div class='grid w-[min(75rem,95vw)] grid-cols-1 gap-4 p-4 md:grid-cols-2'>
     <InteractiveFeatureCard layoutIdPrefix='CoverArt' client:load>
       <Picture src={CoverArt} alt='Cover Art' width={1000} loading='lazy' decoding='async' />
     </InteractiveFeatureCard>

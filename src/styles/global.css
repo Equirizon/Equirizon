@@ -2,8 +2,8 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:where(.dark, .dark *));
-/* 
-section {
+
+/* section {
   outline: 1px solid magenta !important;
 } */
 
@@ -32,23 +32,6 @@ body {
     color 0.3s ease-in-out,
     border-color 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
-}
-
-@theme {
-  --animate-slide-in: slide-in 400ms ease-out both;
-  @keyframes slide-in {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-}
-
-:root {
-  --interative-feature-card-lg: 25rem;
-  --interative-feature-card: 20rem;
 }
 
 @theme inline {
@@ -87,13 +70,6 @@ body {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --color-typescript: var(--typescript);
-  --color-soundcloud: var(--soundcloud);
-  --color-graphics: var(--graphics);
-  --color-theme-color-primary: var(--theme-color-primary);
-  --color-theme-color-secondary: var(--theme-color-secondary);
-  --color-theme-primary-accent: var(--theme-primary-accent);
-  --color-theme-secondary-accent: var(--theme-secondary-accent);
 }
 
 :root {
@@ -129,13 +105,6 @@ body {
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
-  --typescript: #2b6dbf;
-  --soundcloud: #ff5500;
-  --graphics: oklch(72.3% 0.219 149.579);
-  --theme-color-primary: #6956f4;
-  --theme-color-secondary: #fd69ff;
-  --theme-primary-accent: oklch(0.8653 0.0673 281.86);
-  --theme-secondary-accent: oklch(0.9437 0.0484 327.14);
 }
 
 .dark {
@@ -170,6 +139,19 @@ body {
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+:root {
+  --typescript: #2b6dbf;
+  --soundcloud: #ff5500;
+  --graphics: oklch(72.3% 0.219 149.579);
+  --theme-color-primary: #6956f4;
+  --theme-color-secondary: #fd69ff;
+  --theme-primary-accent: oklch(0.8653 0.0673 281.86);
+  --theme-secondary-accent: oklch(0.9437 0.0484 327.14);
+}
+
+.dark {
   --typescript: #2b6dbf;
   --soundcloud: #ff5500;
   --graphics: oklch(72.3% 0.219 149.579);
@@ -177,6 +159,33 @@ body {
   --theme-color-secondary: #970ec5;
   --theme-primary-accent: oklch(0.1718 0.0472 234.53);
   --theme-secondary-accent: oklch(0.1762 0.0652 302.23);
+}
+
+@theme inline {
+  --color-typescript: var(--typescript);
+  --color-soundcloud: var(--soundcloud);
+  --color-graphics: var(--graphics);
+  --color-theme-color-primary: var(--theme-color-primary);
+  --color-theme-color-secondary: var(--theme-color-secondary);
+  --color-theme-primary-accent: var(--theme-primary-accent);
+  --color-theme-secondary-accent: var(--theme-secondary-accent);
+}
+
+@theme {
+  --animate-slide-in: slide-in 400ms ease-out both;
+  @keyframes slide-in {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+:root {
+  --interactive-feature-card-lg: 25rem;
+  --interactive-feature-card: 20rem;
 }
 
 @layer base {

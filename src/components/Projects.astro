@@ -1,12 +1,10 @@
 ---
-import InteractiveFeatureCard from '@/components/ui/InteractiveFeatureCard'
-import Art from '@/images/me.jpg'
-import Picture from 'astro/components/Picture.astro'
+import ProjectsCarousel from './ProjectsCarousel'
 ---
 
-<section id='projects' class='relative flex h-min min-h-[75rem] w-full flex-col items-center justify-start'>
+<section id='projects' class='relative flex h-min min-h-[55rem] w-full flex-col items-center justify-center gap-12'>
   <div id='projects-header'>
-    <h2 class='text-3xl font-extrabold'>My Projects</h2>
+    <h2 class='text-4xl font-bold'>My Projects</h2>
   </div>
-
+  <ProjectsCarousel client:only='react' />
 </section>
