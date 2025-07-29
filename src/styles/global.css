@@ -3,9 +3,9 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* section {
+[data-debug="on"] {
   outline: 1px solid magenta !important;
-} */
+}
 
 html,
 body {
@@ -184,8 +184,8 @@ body {
 }
 
 :root {
-  --interactive-feature-card-lg: 25rem;
-  --interactive-feature-card: 20rem;
+  --interactive-feature-card-lg: 26rem;
+  --interactive-feature-card: 18rem;
 }
 
 @layer base {

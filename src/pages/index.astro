@@ -6,6 +6,35 @@ import About from '@/components/About.astro'
 import Passions from '@/components/Passions.astro'
 ---
 
+<script>
+  const sections = document.querySelectorAll('section')
+
+  sections.forEach((section) => {
+    section.classList.add('opacity-0')
+    section.classList.add('transition-opacity')
+    section.classList.add('duration-300')
+  })
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100')
+        } else {
+          entry.target.classList.remove('opacity-100')
+        }
+      })
+    },
+    { threshold: 0.3 },
+  )
+
+  if (sections) {
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+  }
+</script>
+
 <RootLayout>
   <Hero />
   <About />

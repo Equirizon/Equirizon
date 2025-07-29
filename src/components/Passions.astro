@@ -1,30 +1,63 @@
 ---
 import { Picture } from 'astro:assets'
 import InteractiveFeatureCard from './ui/InteractiveFeatureCard'
-import Me from '@/images/me.jpg'
-import CoverArt from '@/images/cover-art.png'
-import WallpaperMobile from '@/images/wallpaper-mobile.png'
-import Icon from '@/images/icon.png'
+import SoftwareDev from '@/images/software_dev.jpg'
+import MusicCrave from '@/images/music_crave.jpg'
+import Fitness from '@/images/fitness_discipline.jpg'
+import CreativeMedia from '@/images/me.jpg'
+
+const creativeMedia = [
+  {
+    category: 'Creative Media',
+    title: 'Creating Everything by Hand, from Concept to Final Frame.',
+    description: `My journey started in Photoshop and Illustrator, with a personal rule: "Only use original work." From logos to wallpapers to motion graphics in After Effects, I taught myself everything to stay true to that rule. 
+    
+      Design was my first language, one I still speak fluently.
+    
+      Photo taken at Pagudpud, Ilocos Norte`,
+  },
+  {
+    category: 'Software Development',
+    title: 'Engineering Real-World Apps with Aesthetics.',
+    description: `I build full-stack applications from the ground up, not just to check boxes or show off tech, but to solve real problems with real purpose.
+      
+      Whether it's a community-serving admin tool or a small passion project, I approach each one with the same mindset: design with intention, code with clarity, and deploy something that actually works.`,
+  },
+  {
+    category: 'Music Crave',
+    title: 'Materializing Dreams with Synth Soundscapes',
+    description: `Music is another way I build from scratch, crafting each track layer by layer, the same way I write code.
+    
+      Using tools like Ableton, Massive, and Vital, I produce synth-heavy music that leans into emotion, structure, and texture. It's not about chasing trends; it's about translating thoughts into sound.`,
+  },
+  {
+    category: 'Fitness & Discipline',
+    title: 'A Lifestyle of Consistency and Control.',
+    description: `My cutting journey and workouts are more than just aesthetics, they're proof of discipline.
+      
+      Fueled by hopes and dreams, I train with a mindset sharpened by solitude and purpose.`,
+  },
+]
 ---
 
-<section
-  id='passions'
-  class='relative flex h-min min-h-[75rem] w-full flex-col items-center justify-center gap-16 py-[10rem]'>
-  <div id='passions-header'>
-    <h2 class='text-3xl font-extrabold'>My Hobbies</h2>
-  </div>
-  <div class='grid w-[min(75rem,95vw)] grid-cols-1 gap-4 p-4 md:grid-cols-2'>
-    <InteractiveFeatureCard layoutIdPrefix='CoverArt' client:load>
-      <Picture src={CoverArt} alt='Cover Art' width={1000} loading='lazy' decoding='async' />
-    </InteractiveFeatureCard>
-    <InteractiveFeatureCard layoutIdPrefix='Icon' client:load>
-      <Picture src={Icon} alt='Icon' width={1000} loading='lazy' decoding='async' />
-    </InteractiveFeatureCard>
-    <InteractiveFeatureCard layoutIdPrefix='WallpaperMobile' client:load>
-      <Picture src={WallpaperMobile} alt='Wallpaper Mobile' width={1000} loading='lazy' decoding='async' />
-    </InteractiveFeatureCard>
-    <InteractiveFeatureCard layoutIdPrefix='Me' client:load>
-      <Picture src={Me} alt='Me' width={1000} loading='lazy' decoding='async' />
-    </InteractiveFeatureCard>
+<section id='passions' class='relative h-min min-h-[55rem] w-full py-[2rem]'>
+  <div class='m-auto flex w-[min(65rem,calc(100vw-30px))] flex-col gap-6'>
+    <div id='passions-header'>
+      <h2 class='text-4xl font-bold'>Hobbies</h2>
+    </div>
+    <div class='grid w-full grid-cols-2 grid-rows-2 gap-2 lg:grid-cols-5 lg:gap-5'>
+      <InteractiveFeatureCard aspectRatio='3/4' textContent={creativeMedia[0]} className='lg:col-span-3' client:load>
+        <Picture src={CreativeMedia} alt={creativeMedia[0].title} width={1000} loading='lazy' decoding='async' />
+      </InteractiveFeatureCard>
+      <InteractiveFeatureCard aspectRatio='4/3' textContent={creativeMedia[1]} className='lg:col-span-2' client:load>
+        <Picture src={SoftwareDev} alt={creativeMedia[1].title} width={1000} loading='lazy' decoding='async' />
+      </InteractiveFeatureCard>
+      <InteractiveFeatureCard aspectRatio='3/4' textContent={creativeMedia[3]} className='lg:col-span-2' client:load>
+        <Picture src={Fitness} alt={creativeMedia[2].title} width={1000} loading='lazy' decoding='async' />
+      </InteractiveFeatureCard>
+      <InteractiveFeatureCard aspectRatio='4/3' textContent={creativeMedia[2]} className='lg:col-span-3' client:load>
+        <Picture src={MusicCrave} alt={creativeMedia[3].title} width={1000} loading='lazy' decoding='async' />
+      </InteractiveFeatureCard>
+    </div>
   </div>
 </section>

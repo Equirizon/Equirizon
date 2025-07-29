@@ -4,14 +4,14 @@ import Art from '@/images/cover-art.png'
 import { ScrollArea } from '@ui/scroll-area'
 import { Separator } from '@ui/separator'
 import { Button } from '@ui/button'
-import { SquareArrowOutUpLeft } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 ---
 
 <section id='about' class='flex h-screen min-h-[55rem] w-full flex-col items-center justify-evenly'>
   <div
-    class='to-theme-secondary-accent from-theme-primary-acto-theme-secondary-accent flex h-4/5 w-[min(85vw,65rem)] flex-col items-center justify-between bg-linear-60 shadow-2xl shadow-theme-color-secondary/20 lg:h-3/5 lg:flex-row'>
+    class='to-theme-secondary-accent from-theme-primary-accent dark:shadow-theme-color-secondary/20 flex h-5/7 w-[min(90vw,65rem)] flex-col items-center justify-between rounded-xl bg-linear-60 shadow-xl overflow-hidden lg:h-3/5 lg:flex-row'>
     <div
-      class='group relative flex aspect-auto h-1/4 flex-row items-center justify-center overflow-clip lg:h-full lg:w-2/4'>
+      class='group relative flex aspect-auto h-1/4 flex-row items-center justify-center overflow-hidden lg:h-full lg:w-2/4'>
       <a href='https://www.instagram.com/p/DMFZ00ppKHY/' rel='noopener noreferrer' target='_blank'>
         <Picture
           src={Art}
@@ -19,21 +19,21 @@ import { SquareArrowOutUpLeft } from 'lucide-react'
           formats={['avif', 'webp']}
           width={1000}
           height={1000}
-          class='transition-all duration-300 hover:scale-192 lg:scale-190'
+          class='transition-all duration-300 hover:scale-102 lg:hover:scale-192 lg:scale-190'
         />
       </a>
-      <SquareArrowOutUpLeft
+      <ExternalLink
         size={26}
-        className='stroke-accent absolute bottom-0 left-0 m-1 opacity-0 transition-all duration-300 group-hover:opacity-100'
+        className='stroke-accent absolute bottom-2 left-2 pointer-events-none m-1 opacity-0 transition-all duration-300 group-hover:opacity-100'
       />
     </div>
     <div class='flex h-3/4 w-full flex-col justify-between p-6 lg:h-full lg:p-10'>
       <div>
-        <h1 class='text-accent-foreground text-3xl font-extrabold'>About Me</h1>
+        <h1 class='text-accent-foreground text-3xl font-bold'>About Me</h1>
         <h3 class='text-theme-color-primary text-xl font-bold'>Brandon Bustria - Front-end Web Developer</h3>
       </div>
       <ScrollArea
-        className='*:text-muted-foreground w-[calc(100% + pe-4)] flex h-3/4 pe-4 text-justify transition-all *:text-sm lg:h-9/11 lg:w-auto'
+        className='*:text-muted-foreground w-[104%] flex h-3/4 pe-4 text-justify transition-all *:text-sm lg:h-9/11 lg:w-auto'
         client:only='react'>
         <p>
           I've always been obsessed with how things are made, whether it's a UI, a song, or even circuits on a

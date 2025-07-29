@@ -1,9 +1,15 @@
 'use client'
 
+import type { GetImageResult } from 'astro'
 import { useScroll, useMotionValueEvent, motion } from 'motion/react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-export default function HeroImage() {
+interface HeroImage {
+  heroImage: GetImageResult
+  parallaxBackground: GetImageResult
+}
+
+export default function HeroImage({ heroImage, parallaxBackground }: HeroImage): React.ReactNode {
   const { scrollYProgress } = useScroll()
   const [parallax, setParallax] = useState(0)
 
@@ -31,14 +37,16 @@ export default function HeroImage() {
       </svg>
       <div className='absolute z-0 h-full w-full' style={{ mask: 'url(#scrollMask)' }}>
         <motion.img
-          src='src/assets/hero-bg.png'
+          fetchPriority='high'
+          src={parallaxBackground.src}
           alt='palm tree background'
           className='absolute -top-10 aspect-auto'
           style={{ translateY: parallax }}
         />
       </div>
       <img
-        src='src/assets/me-cutout.png'
+        fetchPriority='high'
+        src={heroImage.src}
         alt='its me'
         className='absolute left-1/2 w-full -translate-x-1/2 mask-[url(/src/assets/svg/bottom.svg)] mask-exclude mask-luminance mask-contain mask-no-repeat'
       />

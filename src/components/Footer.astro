@@ -3,12 +3,12 @@ import VersionTag from '@ui/VersionTag.astro'
 import { ThemeToggle } from '@/components/ThemeToggle'
 ---
 
-<section
+<footer
   id='footer'
   class='text-muted-foreground border-t-border static bottom-0 left-0 flex h-16 w-full flex-row items-center justify-evenly gap-7 border-t bg-linear-60 bg-none from-fuchsia-100/70 to-sky-100/70 shadow-2xs backdrop-blur-xl'>
-  <div class='text-xs font-bold'><span class="text-2xs font-normal opacity-50">handcrafted by</span> @Equirizon</div>
+  <div class='text-xs font-bold'><span class="text-2xs font-normal text-muted-foreground/50">handcrafted by</span> @Equirizon</div>
   <div class='flex flex-row items-center justify-center gap-5'>
     <VersionTag />
     <ThemeToggle client:load />
   </div>
-</section>
+</footer>

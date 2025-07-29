@@ -1,6 +1,6 @@
 [
   {
-    "title": "Barangay Management",
+    "title": "Barangay   Management App",
     "description": "A full-stack web app using Next.js and Supabase",
     "srcImage": "src/images/bms.png",
     "url": "https://barangay-system-website.vercel.app/",

@@ -34,32 +34,42 @@ export default function ProjectsCarousel() {
   }, [api])
 
   return (
-    <div className='relative w-[min(95vw,48rem)]'>
-      <Carousel setApi={setApi} className='w-[min(95vw,48rem)]'>
+    <div className='relative w-[min(97vw,48rem)]'>
+      <Carousel setApi={setApi} className='w-[min(97vw,48rem)]'>
         <CarouselContent>
           {projects.map((project, i) => {
             return (
               <CarouselItem key={i}>
-                <div className='px-4 py-1'>
-                  <Card className='to-theme-primary-accent from-theme-secondary-accent bg-linear-30'>
+                <div className='mx-6 mb-10'>
+                  <Card
+                    className={cn(
+                      'to-theme-primary-accent from-theme-secondary-accent dark:shadow-theme-color-primary/25 delay-50 border-none bg-linear-30 transition-all ease-in-out duration-700',
+                      current === i + 1 ? 'shadow-xl -translate-y-0 scale-100' : 'shadow-none translate-y-5 scale-90 opacity-20',
+                    )}>
                     <CardHeader>
                       <CardTitle>{project.title}</CardTitle>
                       <CardDescription className='truncate'>{project.description}</CardDescription>
                       <CardAction>
                         <Button size='sm' variant='link'>
-                          <a className='flex items-center gap-1' href={project.url}>
+                          <a
+                            className='flex items-center gap-1'
+                            target={project.url.includes('https') ? '_blank' : undefined}
+                            rel='noopener noreferrer'
+                            href={project.url}>
                             <span className='hidden md:inline-block'>View Project</span>
                             <ExternalLink />
                           </a>
                         </Button>
                       </CardAction>
                     </CardHeader>
-                    <CardContent className='flex items-center justify-center overflow-hidden'>
-                      <img
-                        src={project.srcImage}
-                        alt={project.title}
-                        className='aspect-square rounded-lg object-cover italic md:aspect-video md:transition-transform'
-                      />
+                    <CardContent className='flex aspect-square items-center justify-center overflow-hidden md:aspect-video'>
+                      <div className='flex size-full items-center justify-center overflow-hidden rounded-lg'>
+                        <img
+                          src={project.srcImage}
+                          alt={project.title}
+                          className='aspect-auto lg:size-full rounded-lg object-cover italic'
+                        />
+                      </div>
                     </CardContent>
                     <CardFooter className='text-muted-foreground text-sm font-light'>
                       <p className='truncate'>{project.footer}</p>
@@ -76,16 +86,18 @@ export default function ProjectsCarousel() {
       {/* <div className='text-muted-foreground bg-theme-color-primary/30 absolute top-5 right-8 rounded-full px-2 py-1 text-center text-xs font-semibold md:hidden'>
         {current}/{count}
       </div> */}
-      <div className='bg-theme-color-primary/30 absolute bottom-2 left-1/2 flex -translate-x-1/2 flex-row justify-center gap-1 rounded-full p-1.5 lg:hidden'>
+      <div className='bg-theme-color-primary/30 absolute bottom-2 left-1/2 flex -translate-x-1/2 flex-row justify-center gap-1 rounded-full p-1.5'>
         {Array.from({ length: count }).map((_, i) => {
           return (
-            <div
-              key={i}
-              className={cn(
-                'size-1.5 rounded-full transition-colors duration-200',
-                current === i + 1 ? 'bg-theme-color-primary' : 'bg-accent-foreground/10',
-              )}
-            />
+            <div key={i} className='flex flex-col items-center justify-center'>
+              <div
+                className={cn(
+                  'bg-theme-color-primary size-1.5 rounded-full transition-all duration-300',
+                  current === i + 1 ? 'scale-100 opacity-100' : 'scale-40 opacity-0',
+                )}
+              />
+              <div className='bg-accent-foreground/10 absolute size-1.5 rounded-full' />
+            </div>
           )
         })}
       </div>

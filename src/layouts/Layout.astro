@@ -36,7 +36,9 @@ import Footer from '@/components/Footer.astro'
     <HeaderContainer client:load>
       <Header />
     </HeaderContainer>
-    <slot />
+    <div class='flex size-full flex-col gap-[1rem]'>
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
