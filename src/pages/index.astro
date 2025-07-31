@@ -4,6 +4,7 @@ import RootLayout from '@/layouts/Layout.astro'
 import Projects from '@/components/Projects.astro'
 import About from '@/components/About.astro'
 import Passions from '@/components/Passions.astro'
+import Contact from '@/components/Contact.astro'
 ---
 
 <script>
@@ -20,8 +21,6 @@ import Passions from '@/components/Passions.astro'
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('opacity-100')
-        } else {
-          entry.target.classList.remove('opacity-100')
         }
       })
     },
@@ -40,4 +39,5 @@ import Passions from '@/components/Passions.astro'
   <About />
   <Projects />
   <Passions />
+  <Contact />
 </RootLayout>

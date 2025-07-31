@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets'
+import ContactForm from './ContactForm'
+import Background from 'src/assets/2.1.0a.png'
+---
+
+<section
+  id='contact'
+  class='bg-theme-secondary-accent relative flex h-screen min-h-[45rem] w-full flex-col md:items-end justify-center overflow-hidden'>
+  <div class='md:mr-[15rem] flex flex-col items-center justify-center gap-12'>
+    <h2 class='z-1 text-4xl font-bold'>Contact Me</h2>
+    <ContactForm client:load />
+  </div>
+  <!-- <Image src={Background} alt={''} class='absolute object-cover h-full scale-150 translate-x-[-25%] dark:hidden transition-all'/> -->
+  <img
+    src='src/assets/SVG/AeComp.svg'
+    alt='Logo 1.0.0b [beta build_released]'
+    class='absolute h-full translate-x-[-30%] translate-y-[-20%] scale-250 object-cover opacity-60'
+  />
+</section>

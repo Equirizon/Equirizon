@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig, envField } from 'astro/config'
 
 import react from '@astrojs/react'
 
@@ -16,4 +16,11 @@ export default defineConfig({
   },
 
   adapter: cloudflare(),
+
+  env: {
+    schema: {
+      SUPABASE_URL: envField.string({ context: 'client', access: 'public' }),
+      SUPABASE_ANON_KEY: envField.string({ context: 'client', access: 'public' }),
+    },
+  },
 })

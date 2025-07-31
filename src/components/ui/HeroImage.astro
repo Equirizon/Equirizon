@@ -1,6 +1,5 @@
 ---
-import Image from 'astro/components/Image.astro'
-import Bottom from '@/assets/svg/bottom.svg'
+import { Image } from 'astro:assets'
 import Top from '@/assets/svg/top.svg'
 import Background from '@/assets/hero-bg.png'
 import Cutout from '@/assets/me-cutout.png'
@@ -8,7 +7,7 @@ import Cutout from '@/assets/me-cutout.png'
 
 <div class='relative aspect-square w-lg'>
   <svg
-    class='absolute top-0 left-0 w-full h-full pointer-events-none z-10'
+    class='pointer-events-none absolute top-0 left-0 z-10 h-full w-full'
     viewBox='0 0 512 512'
     preserveAspectRatio='xMidYMid meet'>
     <defs>
@@ -18,12 +17,12 @@ import Cutout from '@/assets/me-cutout.png'
       </mask>
     </defs>
   </svg>
-  <div class='absolute w-full h-full z-0' style='mask: url(#scrollMask); -webkit-mask: url(#scrollMask);'>
-    <Image src={Background} alt='palm tree background' class='absolute w-full aspect-auto' />
+  <div class='absolute z-0 h-full w-full' style='mask: url(#scrollMask); -webkit-mask: url(#scrollMask);'>
+    <Image src={Background} alt='palm tree background' class='absolute aspect-auto w-full' />
   </div>
   <Image
     src={Cutout}
     alt='its me'
-    class='absolute w-full left-1/2 -translate-x-1/2 mask-[url(/src/assets/svg/bottom.svg)] mask-luminance mask-exclude mask-contain mask-no-repeat'
+    class='absolute left-1/2 w-full -translate-x-1/2 mask-[url(/src/assets/svg/bottom.svg)] mask-exclude mask-luminance mask-contain mask-no-repeat'
   />
 </div>
