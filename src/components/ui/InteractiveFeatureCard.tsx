@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { motion, type HTMLMotionProps } from 'motion/react'
+import { motion } from 'motion/react'
 import { cn } from '@/lib/utils'
 
 interface InteractiveFeatureCard extends React.ComponentProps<'div'> {

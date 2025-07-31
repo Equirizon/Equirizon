@@ -11,7 +11,6 @@ import { supabase } from '@/utils/supabase/client'
 import { Textarea } from './ui/textarea'
 import { Check, LoaderCircle, X } from 'lucide-react'
 import { useState } from 'react'
-import useTestAction from '@/utils/useTestAction'
 
 const formSchema = z.object({
   name: z
@@ -70,7 +69,7 @@ export default function ContactForm() {
     setTimeout(() => {
       form.reset()
       setActuallySubmitted(false)
-    }, 3000);
+    }, 3000)
   }
 
   return (
