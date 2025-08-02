@@ -3,8 +3,8 @@ import { getImage } from 'astro:assets'
 import { Download } from 'lucide-react'
 import { Button } from './ui/button'
 import HeroImage from './ui/HeroImage.tsx'
-import Me from 'src/assets/me-cutout.png'
-import ParallaxBG from 'src/assets/hero-bg.png'
+import Me from '@assets/me-cutout.png'
+import ParallaxBG from '@assets/hero-bg.png'
 
 const heroParallaxBackground = await getImage({
   src: ParallaxBG,

@@ -3,6 +3,7 @@
 import type { GetImageResult } from 'astro'
 import { useScroll, useMotionValueEvent, motion } from 'motion/react'
 import React, { useState } from 'react'
+import maskBottom from '@assets/SVG/bottom.svg'
 
 interface HeroImage {
   heroImage: GetImageResult
@@ -14,7 +15,7 @@ export default function HeroImage({ heroImage, parallaxBackground }: HeroImage):
   const [parallax, setParallax] = useState(0)
 
   useMotionValueEvent(scrollYProgress, 'change', (value) => {
-    setParallax(value * 400)
+    setParallax(value * 1000)
   })
 
   return (
@@ -48,7 +49,8 @@ export default function HeroImage({ heroImage, parallaxBackground }: HeroImage):
         fetchPriority='high'
         src={heroImage.src}
         alt='its me'
-        className='absolute left-1/2 w-full -translate-x-1/2 mask-[url(/src/assets/svg/bottom.svg)] mask-exclude mask-luminance mask-contain mask-no-repeat'
+        style={{ maskImage: `url(${maskBottom.src})` }}
+        className='absolute left-1/2 w-full -translate-x-1/2 mask-exclude mask-luminance mask-contain mask-no-repeat'
       />
     </div>
   )
