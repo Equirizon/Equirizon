@@ -1,22 +1,22 @@
 [
   {
-    "title": "Barangay   Management App",
+    "title": "Barangay Management App",
     "description": "A full-stack web app using Next.js and Supabase",
-    "srcImage": "src/images/bms.png",
+    "srcImage": "https://xevsxglbwzzvcjngzfus.supabase.co/storage/v1/object/public/images/projects/bms.png",
     "url": "https://barangay-system-website.vercel.app/",
     "footer": "https://barangay-system-website.vercel.app/api/version"
   },
   {
     "title": "Project Equirizon",
     "description": "A flagship portfolio site made by your's truly",
-    "srcImage": "src/images/project-equirizon.png",
+    "srcImage": "https://xevsxglbwzzvcjngzfus.supabase.co/storage/v1/object/public/images/projects/project-equirizon.png",
     "url": "#hero",
     "footer": "v0.1.0"
   },
   {
     "title": "AI Powered Discord Bot",
     "description": "A Discord bot that uses AI to enhance user interactions",
-    "srcImage": "src/images/discord-bot.png",
+    "srcImage": "https://xevsxglbwzzvcjngzfus.supabase.co/storage/v1/object/public/images/projects/discord-bot.png",
     "url": "https://github.com/equirizon/",
     "footer": "Coming Soon"
   }

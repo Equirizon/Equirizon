@@ -1,10 +1,12 @@
 ---
-import Github from './icons/github.astro'
-import Linkedin from './icons/linkedin.astro'
-import Soundcloud from './icons/soundcloud.astro'
-import DropdownMenu from './DropdownMenu'
-import Instagram from './icons/instagram.astro'
-import { ThemeToggle } from './ThemeToggle'
+import DropdownMenu from '@/components/DropdownMenu'
+import { ThemeToggle } from '@/components/ThemeToggle'
+import Github from '@icons/github.astro'
+import Linkedin from '@icons/linkedin.astro'
+import Soundcloud from '@icons/soundcloud.astro'
+import Instagram from '@icons/instagram.astro'
+import LogoLight from '@assets/SVG/logo-light.svg'
+import LogoDark from '@assets/SVG/logo-dark.svg'
 ---
 
 <div class='flex w-max flex-row items-center gap-4'>
@@ -12,12 +14,12 @@ import { ThemeToggle } from './ThemeToggle'
     <img
       alt='logo-light'
       class='absolute size-10 transition-all delay-200 duration-600 ease-in-out md:size-9 dark:opacity-0'
-      src='src/assets/SVG/logo-light.svg'
+      src={LogoLight.src}
     />
     <img
       alt='logo-dark'
       class='size-10 opacity-0 transition-all delay-200 duration-600 ease-in-out md:size-9 dark:opacity-100'
-      src='src/assets/SVG/logo-dark.svg'
+      src={LogoDark.src}
     />
   </a>
   <h1 class='hidden text-lg font-bold lg:inline'>Equirizon</h1>
