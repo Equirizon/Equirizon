@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
 import { ExternalLink } from 'lucide-react'
+import ImageSkeleton from './ui/image-skeleton'
 
 export default function ProjectsCarousel() {
   const [api, setApi] = useState<CarouselApi>()
@@ -43,8 +44,10 @@ export default function ProjectsCarousel() {
                 <div className='mx-6 mb-10'>
                   <Card
                     className={cn(
-                      'to-theme-primary-accent from-theme-secondary-accent dark:shadow-theme-color-primary/25 delay-50 border-none bg-linear-30 transition-all ease-in-out duration-700',
-                      current === i + 1 ? 'shadow-xl -translate-y-0 scale-100' : 'shadow-none translate-y-5 scale-90 opacity-20',
+                      'to-theme-primary-accent from-theme-secondary-accent dark:shadow-theme-color-primary/25 border-none bg-linear-30 transition-all delay-50 duration-700 ease-in-out',
+                      current === i + 1
+                        ? '-translate-y-0 scale-100 shadow-xl'
+                        : 'translate-y-5 scale-90 opacity-20 shadow-none',
                     )}>
                     <CardHeader>
                       <CardTitle>{project.title}</CardTitle>
@@ -64,11 +67,7 @@ export default function ProjectsCarousel() {
                     </CardHeader>
                     <CardContent className='flex aspect-square items-center justify-center overflow-hidden md:aspect-video'>
                       <div className='flex size-full items-center justify-center overflow-hidden rounded-lg'>
-                        <img
-                          src={project.srcImage}
-                          alt={project.title}
-                          className='aspect-auto lg:size-full rounded-lg object-cover italic'
-                        />
+                        <ImageSkeleton src={project.srcImage} alt={project.title} />
                       </div>
                     </CardContent>
                     <CardFooter className='text-muted-foreground text-sm font-light'>
