@@ -26,15 +26,20 @@ export function ThemeToggle() {
           <span className='sr-only'>Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='bg-theme-secondary-accent/70 text-muted-foreground backdrop-blur-lg' align='end'>
+      <DropdownMenuContent
+        className='dark:bg-theme-secondary-accent/70 bg-theme-primary-accent/80 text-muted-foreground backdrop-blur-lg'
+        align='end'>
         <DropdownMenuItem onClick={() => setThemeState('theme-light')}>
-          <Sun /> Light {theme === 'theme-light' ? <Check size={15} className='ml-auto' /> : ''}
+          <Sun className='hover:text-accent-foreground' /> Light{' '}
+          {theme === 'theme-light' ? <Check size={15} className='ml-auto' /> : ''}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setThemeState('dark')}>
-          <Moon /> Dark {theme === 'dark' ? <Check size={15} className='ml-auto' /> : ''}
+          <Moon className='hover:text-accent-foreground' /> Dark{' '}
+          {theme === 'dark' ? <Check size={15} className='ml-auto' /> : ''}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setThemeState('system')}>
-          <MonitorCog /> System {theme === 'system' ? <Check size={15} className='ml-auto' /> : ''}
+          <MonitorCog className='hover:text-accent-foreground' /> System{' '}
+          {theme === 'system' ? <Check size={15} className='ml-auto' /> : ''}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

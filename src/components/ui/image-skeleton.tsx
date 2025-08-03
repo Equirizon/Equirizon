@@ -10,7 +10,7 @@ interface ImageSkeletonProps extends React.ComponentProps<'div'> {
   alt: string
 }
 
-export default function ImageSkeleton({ className, src, alt, ...props }: ImageSkeletonProps) {
+export default function ImageSkeleton({ src, alt, className, ...props }: ImageSkeletonProps) {
   const [loading, setLoading] = useState(true)
   return (
     <div className='relative size-full'>
@@ -25,7 +25,7 @@ export default function ImageSkeleton({ className, src, alt, ...props }: ImageSk
         loading='lazy'
         decoding='async'
         className={cn(
-          'absolute inset-0 top-1/2 -translate-y-1/2 aspect-auto rounded-lg object-cover italic transition-opacity duration-300 lg:size-full',
+          'absolute inset-0 top-1/2 aspect-auto -translate-y-1/2 rounded-lg object-cover italic transition-opacity duration-300 lg:size-full',
           loading ? 'opacity-0' : 'opacity-100',
         )}
         onLoad={() => setLoading(false)}
