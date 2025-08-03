@@ -7,19 +7,18 @@ import { Button } from '@ui/button'
 import { ExternalLink } from 'lucide-react'
 ---
 
-<section id='about' class='flex h-screen min-h-[55rem] w-full flex-col items-center justify-evenly'>
+<section id='about' class='flex h-screen lg:h-[var(--section-height)] w-full flex-col items-center justify-evenly'>
   <div
-    class='to-theme-secondary-accent from-theme-primary-accent dark:shadow-theme-color-secondary/20 flex h-5/7 w-[min(90vw,65rem)] flex-col items-center justify-between rounded-xl bg-linear-60 shadow-xl overflow-hidden lg:h-3/5 lg:flex-row'>
+    class='to-theme-secondary-accent from-theme-primary-accent dark:shadow-theme-color-secondary/20 flex h-5/6 lg:h-2/3 w-[min(90vw,65rem)] flex-col items-center justify-evenly rounded-xl bg-linear-60 shadow-xl overflow-hidden lg:flex-row'>
     <div
-      class='group relative flex aspect-auto h-1/4 flex-row items-center justify-center overflow-hidden lg:h-full lg:w-2/4'>
+      class='group relative lg:w-2/5 w-full overflow-hidden lg:h-full h-2/5'>
       <a href='https://www.instagram.com/p/DMFZ00ppKHY/' rel='noopener noreferrer' target='_blank'>
         <Picture
           src={Art}
           alt='Cover Album Art'
           formats={['avif', 'webp']}
-          width={1000}
-          height={1000}
-          class='transition-all duration-300 hover:scale-102 lg:hover:scale-192 lg:scale-190'
+          quality={70}
+          class='object-cover size-full hover:scale-102 transition-transform duration-300'
         />
       </a>
       <ExternalLink

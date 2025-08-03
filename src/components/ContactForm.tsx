@@ -47,7 +47,7 @@ export default function ContactForm() {
       <LoaderCircle className='stroke-muted-foreground animate-spin' />
     ) : !state.isSubmitting && !state.isSubmitSuccessful && actuallySubmitted ? (
       <span className='text-destructive animate-in fade-in zoom-in-90 flex flex-row items-center gap-2 text-sm font-semibold'>
-        <X className='animate-in fade-in zoom-in-90 stroke-red-600' />
+        <X className='animate-in fade-in zoom-in-90 stroke-destructive' />
         {errorMsg}
       </span>
     ) : (
@@ -69,6 +69,7 @@ export default function ContactForm() {
     setTimeout(() => {
       form.reset()
       setActuallySubmitted(false)
+      setErrorMsg('An error occured.')
     }, 3000)
   }
 
@@ -76,7 +77,7 @@ export default function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='flex w-[min(25rem,90vw)] flex-col justify-start gap-5 space-y-8 transition-all p-7 bg-accent/75 backdrop-blur-md z-1 shadow-xl rounded-2xl'>
+        className='bg-accent/75 z-1 flex w-[min(25rem,90vw)] flex-col justify-start gap-5 space-y-8 rounded-2xl p-7 shadow-xl backdrop-blur-md transition-all'>
         <FormField
           control={form.control}
           name='name'
@@ -84,7 +85,7 @@ export default function ContactForm() {
             <FormItem className='m-0'>
               <FormLabel className='text-muted-foreground'>Name</FormLabel>
               <FormControl>
-                <Input placeholder='Your Name' {...field} className='bg-popover'/>
+                <Input placeholder='Your Name' {...field} className='bg-popover' />
               </FormControl>
               <FormMessage className='animate-in fade-in-0' />
             </FormItem>
@@ -97,7 +98,7 @@ export default function ContactForm() {
             <FormItem className='m-0'>
               <FormLabel className='text-muted-foreground'>Email</FormLabel>
               <FormControl>
-                <Input placeholder='your@email.com' {...field} />
+                <Input placeholder='your@email.com' {...field} className='bg-popover' />
               </FormControl>
               <FormMessage className='animate-in fade-in-0' />
             </FormItem>
@@ -110,7 +111,7 @@ export default function ContactForm() {
             <FormItem className='m-0'>
               <FormLabel className='text-muted-foreground'>Message</FormLabel>
               <FormControl>
-                <Textarea placeholder='message' {...field} />
+                <Textarea placeholder='message' {...field} className='bg-popover' />
               </FormControl>
               <FormMessage className='animate-in fade-in-0' />
             </FormItem>
