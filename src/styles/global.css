@@ -223,7 +223,8 @@ body {
 :root {
   --interactive-feature-card-lg: 26rem;
   --interactive-feature-card: 18rem;
-  --section-height: clamp(65rem,100vh,80rem);
+  --section-height-lg: clamp(65rem,100vh,80rem);
+  --section-height: clamp(45rem,100vh,60rem);
 }
 
 @layer base {

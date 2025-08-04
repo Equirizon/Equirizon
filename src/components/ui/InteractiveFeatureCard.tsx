@@ -136,10 +136,10 @@ export default function InteractiveFeatureCard({
         <motion.div
           layoutId={`${layoutIdPrefix}-card`}
           className='fixed top-1/2 left-1/2 z-11 flex h-auto w-[min(45rem,90vw)] -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-2xl outline-0'>
-          <div className='h-[var(--interactive-feature-card)] md:h-[var(--interactive-feature-card-lg)]'>
+          <div className='h-[var(--interactive-feature-card)] lg:h-[var(--interactive-feature-card-lg)]'>
             <motion.div
               layoutId={`${layoutIdPrefix}-mask`}
-              className='absolute top-0 left-0 z-1 flex h-[var(--interactive-feature-card)] w-full flex-row items-start overflow-hidden md:h-[var(--interactive-feature-card-lg)]'>
+              className='absolute top-0 left-0 z-1 flex h-[var(--interactive-feature-card)] w-full flex-row items-start overflow-hidden lg:h-[var(--interactive-feature-card-lg)]'>
               <Header textContent={textContent} layoutIdPrefix={layoutIdPrefix} expanded={expanded} />
               <Content textContent={textContent} layoutIdPrefix={layoutIdPrefix} aspectRatio={aspectRatio}>
                 {children}

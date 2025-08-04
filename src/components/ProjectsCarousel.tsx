@@ -59,13 +59,13 @@ export default function ProjectsCarousel() {
                             target={project.url.includes('https') ? '_blank' : undefined}
                             rel='noopener noreferrer'
                             href={project.url}>
-                            <span className='hidden md:inline-block'>View Project</span>
+                            <span className='hidden sm:inline-block'>View Project</span>
                             <ExternalLink />
                           </a>
                         </Button>
                       </CardAction>
                     </CardHeader>
-                    <CardContent className='flex aspect-square items-center justify-center overflow-hidden md:aspect-video'>
+                    <CardContent className='flex aspect-square items-center justify-center overflow-hidden sm:aspect-video'>
                       <div className='flex size-full items-center justify-center overflow-hidden rounded-lg'>
                         <ImageSkeleton src={project.srcImage} alt={project.title} />
                       </div>
