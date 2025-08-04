@@ -7,7 +7,7 @@ import { Button } from '@ui/button'
 import { ExternalLink } from 'lucide-react'
 ---
 
-<section id='about' class='flex h-screen lg:h-[var(--section-height)] w-full flex-col items-center justify-evenly'>
+<section id='about' class='flex lg:h-[var(--section-height-lg)] h-[var(--section-height)] w-full flex-col items-center justify-evenly'>
   <div
     class='to-theme-secondary-accent from-theme-primary-accent dark:shadow-theme-color-secondary/20 flex h-5/6 lg:h-2/3 w-[min(90vw,65rem)] flex-col items-center justify-evenly rounded-xl bg-linear-60 shadow-xl overflow-hidden lg:flex-row'>
     <div
@@ -23,7 +23,7 @@ import { ExternalLink } from 'lucide-react'
       </a>
       <ExternalLink
         size={26}
-        className='stroke-white drop-shadow-md/40 mix-blend-overlay absolute top-2 right-2 pointer-events-none m-1 sm:opacity-0 transition-all duration-300 group-hover:opacity-100'
+        className='stroke-white drop-shadow-md/40 mix-blend-overlay absolute top-2 right-2 pointer-events-none m-1 lg:opacity-0 transition-all duration-300 group-hover:opacity-100'
       />
     </div>
     <div class='flex h-3/4 w-full flex-col justify-between p-6 lg:h-full lg:p-10'>
