@@ -7,32 +7,33 @@ import { Button } from '@ui/button'
 import { ExternalLink } from 'lucide-react'
 ---
 
-<section id='about' class='flex lg:h-[var(--section-height-lg)] h-[var(--section-height)] w-full flex-col items-center justify-evenly'>
+<section
+  id='about'
+  class='flex h-[var(--section-height)] w-full flex-col items-center justify-evenly lg:h-[var(--section-height-lg)]'>
   <div
-    class='to-theme-secondary-accent from-theme-primary-accent dark:shadow-theme-color-secondary/20 flex h-5/6 lg:h-2/3 w-[min(90vw,65rem)] flex-col items-center justify-evenly rounded-xl bg-linear-60 shadow-xl overflow-hidden lg:flex-row'>
-    <div
-      class='group relative lg:w-2/5 w-full overflow-hidden lg:h-full h-2/5'>
+    class='to-theme-secondary-accent from-theme-primary-accent dark:shadow-theme-color-secondary/20 flex h-5/6 w-[min(90vw,65rem)] flex-col items-center justify-evenly overflow-hidden rounded-xl bg-linear-60 shadow-xl lg:h-2/3 lg:flex-row'>
+    <div class='group relative h-2/5 w-full overflow-hidden lg:h-full lg:w-2/5'>
       <a href='https://www.instagram.com/p/DMFZ00ppKHY/' rel='noopener noreferrer' target='_blank'>
         <Picture
           src={Art}
           alt='Cover Album Art'
           formats={['avif', 'webp']}
           quality={70}
-          class='object-cover size-full hover:scale-101 transition-transform duration-300'
+          class='size-full object-cover transition-transform duration-300 hover:scale-101'
         />
       </a>
       <ExternalLink
         size={26}
-        className='stroke-white drop-shadow-md/40 mix-blend-overlay absolute top-2 right-2 pointer-events-none m-1 lg:opacity-0 transition-all duration-300 group-hover:opacity-100'
+        className='pointer-events-none absolute top-2 right-2 m-1 stroke-white mix-blend-overlay drop-shadow-md/40 transition-all duration-300 group-hover:opacity-100 lg:opacity-0'
       />
     </div>
-    <div class='flex h-3/4 w-full flex-col justify-between p-6 lg:h-full lg:p-10'>
+    <div class='flex h-3/4 w-full gap-2 lg:gap-4 flex-col justify-between p-6 lg:h-full lg:p-10'>
       <div>
         <h1 class='text-accent-foreground text-3xl font-bold'>About Me</h1>
         <h3 class='text-theme-color-primary text-xl font-bold'>Brandon Bustria - Front-end Web Developer</h3>
       </div>
       <ScrollArea
-        className='*:text-muted-foreground w-[104%] flex h-3/4 pe-4 text-justify transition-all *:text-sm lg:h-9/11 lg:w-auto'
+        className='*:text-muted-foreground flex h-3/4 w-[calc(100%+16px)] pe-4 text-justify transition-all *:text-sm lg:h-9/11 grow'
         client:only='react'>
         <p>
           I've always been obsessed with how things are made, whether it's a UI, a song, or even circuits on a

@@ -9,7 +9,6 @@
     "paths": {
       "@/*": ["src/*"],
       "@ui/*": ["src/components/ui/*"],
-      "@assets/*": ["src/assets/*"],
       "@icons/*": ["src/components/icons/*"],
       "@package": ["./package.json"]
     }

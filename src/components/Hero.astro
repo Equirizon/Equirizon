@@ -2,8 +2,8 @@
 import { getImage } from 'astro:assets'
 import { Button } from './ui/button'
 import HeroImage from './ui/HeroImage.tsx'
-import Me from '@assets/me-cutout.png'
-import ParallaxBG from '@assets/hero-bg.png'
+import Me from '@/assets/me-cutout.png'
+import ParallaxBG from '@/assets/hero-bg.png'
 import CVButton from './CVButton'
 
 const heroParallaxBackground = await getImage({
@@ -29,7 +29,7 @@ const heroImage = await getImage({
 
 <section
   id='hero'
-  class='flex h-screen min-h-[var(--hero-min-height)] w-full flex-col items-center justify-center gap-10 lg:pt-16'>
+  class='relative flex h-screen min-h-[var(--hero-min-height)] w-full flex-col items-center justify-center gap-10 lg:pt-16'>
   <div class='mx-auto flex w-[min(85vw,70rem)] flex-col-reverse items-center justify-between xl:flex-row'>
     <div class='flex flex-col gap-6'>
       <div>
@@ -52,7 +52,7 @@ const heroImage = await getImage({
           I build apps for the modern web using TypeScript, React, and Tailwind CSS
         </p>
       </div>
-      <div class='flex flex-row gap-1 items-center justify-start'>
+      <div class='flex flex-row items-center justify-start gap-1'>
         <a href='#about'><Button variant='outline'>Learn More</Button></a>
         <CVButton client:load />
       </div>
