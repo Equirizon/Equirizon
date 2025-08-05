@@ -2,89 +2,56 @@
 
 > Personal portfolio, but make it feel like a flagship product launch.
 
-Welcome to **Project Equirizon** — not just a developer portfolio, but a hyper-curated experience designed to present _myself_ (Brandon Bustria)
-Built from scratch using modern web tech with speed, clarity, and vibes in mind.
+Welcome to **Project Equirizon** — a portfolio built from scratch with speed and clarity in mind.  
+This site is a reflection of my skills, interests, and identity as a developer — wrapped in a sleek, user-first experience.
 
-Think of it as:  
-👨‍💻 **Software Dev.**  
-🎵 **Music Maker.**  
-🏋️ **Iron Pusher.**  
-But make it interactive, performant, and hosted on the edge.
+> This project is a work in progress, and I plan to keep adding new features and content over time.
 
----
+## 👋 About Me
 
-## 🔗 Brandon Bustria – Portfolio
-
-🌐 [https://equirizon.dev](https://equirizon.dev) _(Coming soon)_
-
-### 📦 Portfolio Tech Stack
-
-| Area           | Tech                                                                 |
-|----------------|----------------------------------------------------------------------|
-| Framework      | [Astro](https://astro.build) – Static-first with partial hydration   |
-| Styling        | [Tailwind CSS](https://tailwindcss.com) + SCSS Modules (where needed)|
-| Content        | Markdown + Astro Content Collections                                 |
-| Hosting        | [Cloudflare Pages](https://pages.cloudflare.com)                     |
-| Animations     | Astro Motion / Framer Motion (for microinteractions + flow)          |
-| Fonts          | Self-hosted via Google Fonts Helper + `font-display: swap`           |
-| Forms          | Web3Forms or Cloudflare Worker (still deciding)                      |
-| Tooling        | Vite, TypeScript, GitHub Actions, Custom OG generator (planned)      |
-
----
-
-## 🧩 Features
-
-- ⚡️ Ultra-fast load times with zero-runtime components
-- 🎯 Clear project breakdowns with visual polish
-- 🎨 Fluid animations without overkill
-- 🌗 Adaptive theming (dark/light mode — coming soon)
-- 🧠 Designed like a product, not a résumé
-
----
-
-## 🧪 In Development
-
-- [ ] Custom OG Image generator (for dynamic link previews)
-- [ ] PWA support + offline experience
-- [ ] Personal blog / tech notes section
-- [ ] Contact form with spam filtering
-- [ ] Interactive command-line mode (maybe 👀)
-
----
-
-## 🛠️ Side Projects
-
-### 1. **AI-Powered Discord Bot** _(WIP)_  
-
-An intelligent Discord companion that acts more like a **friend** than a bot.  
-Designed to understand natural conversation and handle:
-
-- Dynamic conversations
-- Commands without feeling like commands
-- Low-key AI assistant functions
-
-Think J.A.R.V.I.S., but with Discord Nitro.
-
-### 2. **Barangay Management System**  
-
-Built for real-world admin use, this full-stack web app powers local barangay ops.  
-Live at: [barangay-system-website.vercel.app](https://barangay-system-website.vercel.app)
-
----
-
-## 📡 About Me
-
-I'm Brandon Bustria — a Computer Engineering grad who builds things that are clean, fast, and functional.  
+I'm Brandon Bustria, a Computer Engineer who builds apps that are clean, fast, and functional.  
 I write code to support my two other life pillars: 🎧 **music production** and 🏋️ **fitness**.
 
-> "Work on yourself like you're your own most ambitious project. Can't stop won't stop, Also never settle."  
+> “You’re the product. Build accordingly.  
+> Can’t stop. Won’t stop. Also never settle.”
+---
+
+<div align="center">
+
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="HTML5"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" alt="CSS3"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="JavaScript"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" height="40" alt="TypeScript"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" width="40" height="40" alt="SCSS"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40" alt="Tailwind CSS"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" height="40" alt="React"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40" height="40" alt="Next.js"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" width="40" height="40" alt="Astro"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" width="40" height="40" alt="Supabase"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" width="40" height="40" alt="SQLite"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="Node.js"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" width="40" height="40" alt="Bash"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40" alt="Git"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" width="40" height="40" alt="Vite.js"/>
+  <img src="https://vercel.com/favicon.ico" width="40" height="40" alt="Vercel"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflareworkers/cloudflareworkers-original.svg" width="40" height="40" alt="Cloudflare Pages"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" width="40" height="40" alt="Photoshop"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg" width="40" height="40" alt="Illustrator"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" height="40" alt="Python"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" width="40" height="40" alt="Arduino"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" width="40" height="40" alt="Raspberry Pi"/>
+
+</div>
 
 ---
 
 ## 📬 Let's Connect
 
+- 📧 Email: **<bustriabrandon@gmail.com>**
+- 🌐 Website: [equirizon.pages.dev](https://equirizon.pages.dev/#contact)
 - 🐙 GitHub: [@Equirizon](https://github.com/Equirizon)
 - 💼 LinkedIn: [Don Bustria](https://linkedin.com/in/donbustria/)
 - 🎵 SoundCloud: [soundcloud.com/equirizon](https://soundcloud.com/equirizon)
+- 🐦 Twitter: [@Equirizon](https://twitter.com/Equirizon)
 
 ---
