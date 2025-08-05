@@ -3,7 +3,7 @@
 import type { GetImageResult } from 'astro'
 import { useScroll, useMotionValueEvent, motion } from 'motion/react'
 import React, { useState } from 'react'
-import maskBottom from '@assets/SVG/bottom.svg'
+import maskBottom from '@/assets/SVG/bottom.svg'
 
 interface HeroImage {
   heroImage: GetImageResult
