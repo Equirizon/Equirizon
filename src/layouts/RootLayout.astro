@@ -28,12 +28,26 @@ import Footer from '@/components/Footer.astro'
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
+    <meta name='author' content='Brandon Bustria' />
+    <meta
+      name='description'
+      content='A personal website showcasing projects,
+       skills, and contact information 
+       built with Astro and Tailwind CSS.'
+    />
+    <meta name='theme-color' content='#fd69ff' media="(prefers-color-scheme: light)" />
+    <meta name='theme-color' content='#970ec5' media="(prefers-color-scheme: dark)" />
+    <meta property='og:title' content='Brandon | Equirizon' />
+    <meta property='og:description' content='A personal website showcasing projects, skills, and contact information built with Astro and Tailwind CSS.' />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://equirizon.pages.dev/' />
+    <meta property='og:image' content='https://xevsxglbwzzvcjngzfus.supabase.co/storage/v1/object/public/project-equirizon/assets/images/open-graph/og-image.png' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <title>Brandon | Equirizon</title>
   </head>
   <body>
-    <HeaderContainer client:load>
+  <HeaderContainer client:load>
       <Header />
     </HeaderContainer>
     <div class='flex size-full flex-col gap-[1rem]'>
