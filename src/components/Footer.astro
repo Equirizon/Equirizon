@@ -9,9 +9,7 @@ import { Button } from '@ui/button'
   id='footer'
   class='text-muted-foreground border-t-border static bottom-0 left-0 flex h-16 w-full flex-row items-center justify-evenly gap-7 border-t shadow-2xs backdrop-blur-xl'>
   <div>
-    <span class='text-muted-foreground text-xs font-normal'>handcrafted by</span><MyHoverCard client:visible
-      ><Button variant='link' className='px-1 text-xs font-bold' size='sm'>@Equirizon</Button></MyHoverCard
-    >
+    <span class='text-muted-foreground text-xs font-normal'>handcrafted by</span><MyHoverCard client:only='react' />
   </div>
   <div class='flex flex-row items-center justify-center gap-5'>
     <VersionTag />
