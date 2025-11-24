@@ -13,7 +13,7 @@ import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader,
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
-import { ExternalLink } from 'lucide-react'
+import { Code, ExternalLink, Wrench } from 'lucide-react'
 import ImageSkeleton from './ui/image-skeleton'
 
 export default function ProjectsCarousel() {
@@ -53,16 +53,25 @@ export default function ProjectsCarousel() {
                       <CardTitle>{project.title}</CardTitle>
                       <CardDescription className='truncate'>{project.description}</CardDescription>
                       <CardAction>
-                        <Button size='sm' variant='link'>
-                          <a
-                            className='flex items-center gap-1'
-                            target={project.url.includes('https') ? '_blank' : undefined}
-                            rel='noopener noreferrer'
-                            href={project.url}>
-                            <span className='hidden sm:inline-block'>View Project</span>
-                            <ExternalLink />
-                          </a>
-                        </Button>
+                        {project['anchor-source'] !== 'wip' ? (
+                          <Button size='sm' variant='link'>
+                            <a
+                              className='flex items-center gap-1'
+                              target={project.url.includes('https') ? '_blank' : undefined}
+                              rel='noopener noreferrer'
+                              href={project.url}>
+                              <span className='hidden sm:inline-block'>
+                                {project['anchor-source'] === 'link' ? 'View Project' : 'View Source Code'}
+                              </span>
+                              {project['anchor-source'] === 'link' ? <ExternalLink /> : <Code />}
+                            </a>
+                          </Button>
+                        ) : (
+                          <span className='text-muted-foreground inline-flex items-center gap-1'>
+                            <p className='text-sm font-medium'>Work In Progress</p>
+                            <Wrench size={16} />
+                          </span>
+                        )}
                       </CardAction>
                     </CardHeader>
                     <CardContent className='flex aspect-square items-center justify-center overflow-hidden sm:aspect-video'>
