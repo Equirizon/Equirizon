@@ -1,7 +1,9 @@
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
+import { Button } from './ui/button'
+import type { JSX } from 'react'
 
-export default function MyHoverCard({ children }: { children: string }) {
+export default function MyHoverCard(): JSX.Element {
   const date = new Date()
   const formattedYear = date.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -9,7 +11,13 @@ export default function MyHoverCard({ children }: { children: string }) {
 
   return (
     <HoverCard>
-      <HoverCardTrigger>{children}</HoverCardTrigger>
+      <HoverCardTrigger>
+        <a href='https://github.com/Equirizon'>
+          <Button variant='link' className='px-1 text-xs font-bold' size='sm'>
+            @equirizon
+          </Button>
+        </a>
+      </HoverCardTrigger>
       <HoverCardContent className='bg-theme-primary-accent text-muted-foreground w-[20rem]' asChild>
         <div className='flex flex-row justify-between gap-3'>
           <Avatar>
@@ -17,7 +25,11 @@ export default function MyHoverCard({ children }: { children: string }) {
             <AvatarFallback>EQ</AvatarFallback>
           </Avatar>
           <div className='flex w-full flex-col items-start justify-start gap-1'>
-            <span className='text-accent-foreground text-sm font-bold'>@equirizon</span>
+            <a href='https://github.com/Equirizon'>
+              <Button variant='link' className='p-0 h-auto'>
+                <span className='text-accent-foreground text-sm font-bold'>@equirizon</span>
+              </Button>
+            </a>
             <p className='text-accent-foreground text-xs text-pretty'>
               Brandon Bustria — Software Engineer, Learning Music, Aspiring artist.
             </p>
