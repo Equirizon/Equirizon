@@ -8,18 +8,29 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from '@/components/ui/carousel'
-import projects from '../data/projects.json'
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
 import { Code, ExternalLink, Wrench } from 'lucide-react'
 import ImageSkeleton from './ui/image-skeleton'
+import { supabase } from '@/utils/supabase/client'
 
 export default function ProjectsCarousel() {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [count, setCount] = useState(0)
+
+  type PortfolioProject = Array<{
+    title: string
+    description: string
+    image: string
+    url?: string
+    footer?: string
+    anchor_source: 'link' | 'source' | 'wip'
+  }>
+
+  const [projects, setProjects] = useState<PortfolioProject>([])
 
   useEffect(() => {
     if (!api) {
@@ -34,7 +45,17 @@ export default function ProjectsCarousel() {
     })
   }, [api])
 
-  return (
+  useEffect(() => {
+    async function getProjects() {
+      const { data: projects, error } = await supabase.from('projects').select('*')
+      if (!error) {
+        setProjects(projects as PortfolioProject)
+      }
+    }
+    getProjects()
+  }, [])
+
+  return projects.length === 0 ? null /* add fallback ui */ : (
     <div className='relative w-[min(97vw,48rem)]'>
       <Carousel setApi={setApi} className='w-[min(97vw,48rem)]'>
         <CarouselContent>
@@ -53,7 +74,7 @@ export default function ProjectsCarousel() {
                       <CardTitle>{project.title}</CardTitle>
                       <CardDescription className='truncate'>{project.description}</CardDescription>
                       <CardAction>
-                        {project['anchor-source'] !== 'wip' ? (
+                        {project['anchor_source'] !== 'wip' && project.url ? (
                           <Button size='sm' variant='link'>
                             <a
                               className='flex items-center gap-1'
@@ -61,9 +82,9 @@ export default function ProjectsCarousel() {
                               rel='noopener noreferrer'
                               href={project.url}>
                               <span className='hidden sm:inline-block'>
-                                {project['anchor-source'] === 'link' ? 'View Project' : 'View Source Code'}
+                                {project['anchor_source'] === 'link' ? 'View Project' : 'View Source Code'}
                               </span>
-                              {project['anchor-source'] === 'link' ? <ExternalLink /> : <Code />}
+                              {project['anchor_source'] === 'link' ? <ExternalLink /> : <Code />}
                             </a>
                           </Button>
                         ) : (
@@ -76,11 +97,11 @@ export default function ProjectsCarousel() {
                     </CardHeader>
                     <CardContent className='flex aspect-square items-center justify-center overflow-hidden sm:aspect-video'>
                       <div className='flex size-full items-center justify-center overflow-hidden rounded-lg'>
-                        <ImageSkeleton src={project.srcImage} alt={project.title} />
+                        <ImageSkeleton src={project.image} alt={project.title} />
                       </div>
                     </CardContent>
                     <CardFooter className='text-muted-foreground text-sm font-light'>
-                      <p className='truncate'>{project.footer}</p>
+                      <p className='truncate'>{project.footer || ''}</p>
                     </CardFooter>
                   </Card>
                 </div>

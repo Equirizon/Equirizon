@@ -11,7 +11,7 @@ export default function MyHoverCard(): JSX.Element {
 
   return (
     <HoverCard>
-      <HoverCardTrigger>
+      <HoverCardTrigger asChild>
         <a href='https://github.com/Equirizon'>
           <Button variant='link' className='px-1 text-xs font-bold' size='sm'>
             @equirizon
