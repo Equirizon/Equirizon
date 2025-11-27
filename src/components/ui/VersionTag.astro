@@ -15,4 +15,10 @@ const appVersion = projectPackage.version
   }
 </style>
 
-<span class='font-bold text-xs'>v{appVersion}</span>
+<span class='text-xs font-bold'>v{appVersion}</span>{
+  import.meta.env.DEV ? (
+    <span class='bg-theme-color-primary text-accent rounded-md px-1.5 py-1 text-xs'> dev mode</span>
+  ) : (
+    ''
+  )
+}
