@@ -1,0 +1,17 @@
+---
+import { APP_MODE } from 'astro:env/client'
+// import { Button } from './button'
+---
+
+{
+  APP_MODE === 'development' ? (
+    <span class='bg-graphics text-accent rounded-md px-2 py-1 text-xs font-bold'>local dev</span>
+  ) : APP_MODE === 'preview' ? (
+    <span class='bg-soundcloud text-accent rounded-md px-2 py-1 text-xs font-bold'>dev preview</span>
+  ) : (
+    /*     <Button variant='link' size='sm'>
+      <a href='https://github.com/equirizon/equirizon' class='bg-typescript text-accent rounded-md px-2 py-1 text-xs font-bold'>production</a>
+    </Button> */
+    ''
+  )
+}

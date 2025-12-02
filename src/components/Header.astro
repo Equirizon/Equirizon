@@ -7,6 +7,7 @@ import Soundcloud from '@icons/soundcloud.astro'
 import Instagram from '@icons/instagram.astro'
 import LogoLight from '@/assets/SVG/logo-light.svg'
 import LogoDark from '@/assets/SVG/logo-dark.svg'
+import ModeTag from '@ui/ModeTag.astro'
 ---
 
 <div class='flex w-max flex-row items-center gap-4'>
@@ -23,14 +24,18 @@ import LogoDark from '@/assets/SVG/logo-dark.svg'
     />
   </a>
   <h1 class='hidden text-lg font-bold lg:inline'>Equirizon</h1>
+  <ModeTag />
 </div>
+
 <h1 class='font-bold md:inline lg:hidden'>Brandon | Equirizon</h1>
+
 <nav id='navbar' class='absolute left-1/2 hidden -translate-x-1/2 flex-row gap-10 *:transition-all lg:flex'>
   <a href='#about' class='hover:text-accent-foreground'>About</a>
   <a href='#projects' class='hover:text-accent-foreground'>Projects</a>
   <a href='#passions' class='hover:text-accent-foreground'>Hobbies</a>
   <a href='#contact' class='hover:text-accent-foreground'>Contact</a>
 </nav>
+
 <div class='hidden flex-row items-center justify-end gap-8 lg:flex'>
   <a
     href='https://github.com/Equirizon'
@@ -58,4 +63,5 @@ import LogoDark from '@/assets/SVG/logo-dark.svg'
   >
   <ThemeToggle client:load />
 </div>
+
 <DropdownMenu client:load />
