@@ -9,6 +9,7 @@ export default function CVButton() {
   const [isMounted, setIsMounted] = useState(false)
   const [cvLink, setCvLink] = useState('')
   const [error, setError] = useState(false)
+  const [isClicked, setIsClicked] = useState(false)
 
   useEffect(() => {
     async function getCV() {
@@ -24,19 +25,36 @@ export default function CVButton() {
     getCV()
   }, [])
 
+  useEffect(() => {
+    let timeout: NodeJS.Timeout
+    if (isClicked) {
+      timeout = setTimeout(() => {
+        setIsClicked(false)
+      }, 5000)
+    }
+    return () => {
+      if (timeout) clearTimeout(timeout)
+    }
+  }, [isClicked])
+
   return !error ? (
     !isMounted ? (
       <Button variant='link' disabled>
         Download my CV
         <LoaderCircle className='stroke-muted-foreground animate-spin' />
       </Button>
-    ) : (
+    ) : !isClicked ? (
       <a href={`${cvLink}?download=bustria-cv.pdf`} download>
-        <Button variant='link'>
+        <Button variant='link' onClick={() => setIsClicked(true)}>
           <span className='animate-in fade-in-60'>Download my CV</span>
           <Download className='animate-in fade-in-30 zoom-in-80 duration-300' />
         </Button>
       </a>
+    ) : (
+      <Button variant='link' disabled>
+        Downloading CV...
+        <LoaderCircle className='stroke-muted-foreground animate-spin' />
+      </Button>
     )
   ) : (
     <Button variant='link' disabled>
