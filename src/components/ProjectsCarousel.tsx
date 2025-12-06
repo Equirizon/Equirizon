@@ -88,10 +88,12 @@ export default function ProjectsCarousel() {
                             </a>
                           </Button>
                         ) : (
-                          <span className='text-muted-foreground inline-flex items-center gap-1'>
-                            <p className='text-sm font-medium'>Work In Progress</p>
-                            <Wrench size={16} />
-                          </span>
+                          <Button size='sm' variant='link' disabled>
+                            <div className='flex items-center gap-1'>
+                              <span className='hidden sm:inline-block'>Work In Progress</span>
+                              <Wrench size={16} />
+                            </div>
+                          </Button>
                         )}
                       </CardAction>
                     </CardHeader>
