@@ -1,0 +1,18 @@
+---
+import Contact from '@/components/Admin/Contact'
+import Projects from '@/components/Admin/Projects'
+import AdminLayout from '@/layouts/AdminLayout.astro'
+
+const time = new Date().toLocaleTimeString()
+const date = new Date().toLocaleDateString()
+---
+
+<AdminLayout>
+  <main class='flex min-h-screen flex-col items-center justify-center p-4'>
+    <h1 class='mb-4 text-3xl font-bold'>Project: Equirizon Dashboard</h1>
+    <p>Welcome Brandon. Today is {date} and the current time is {time}.</p>
+    <!-- Add more admin functionalities here -->
+    <Contact client:only='react' />
+    <Projects client:only='react' />
+  </main>
+</AdminLayout>
