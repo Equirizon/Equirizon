@@ -11,6 +11,7 @@ import { supabase } from '@/utils/supabase/client'
 import { Textarea } from './ui/textarea'
 import { Check, LoaderCircle, X } from 'lucide-react'
 import { useState } from 'react'
+import formSubmissionStatus from '@/hooks/formSubmissionStatus'
 
 const formSchema = z.object({
   name: z
@@ -25,7 +26,6 @@ const formSchema = z.object({
 })
 
 export default function ContactForm() {
-  const [actuallySubmitted, setActuallySubmitted] = useState(false)
   const [errorMsg, setErrorMsg] = useState('An error occured.')
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -36,24 +36,7 @@ export default function ContactForm() {
     },
   })
 
-  function formSubmissionStatus() {
-    const state = form.formState
-
-    return state.isSubmitSuccessful && !state.isSubmitting ? (
-      <span className='animate-pop-in-out flex flex-row items-center gap-2 text-sm font-semibold text-green-700'>
-        <Check className='animate-pop-in-out stroke-green-700' /> Submitted!
-      </span>
-    ) : state.isSubmitting ? (
-      <LoaderCircle className='stroke-muted-foreground animate-spin' />
-    ) : !state.isSubmitting && !state.isSubmitSuccessful && actuallySubmitted ? (
-      <span className='text-destructive animate-in fade-in zoom-in-90 flex flex-row items-center gap-2 text-sm font-semibold'>
-        <X className='animate-in fade-in zoom-in-90 stroke-destructive' />
-        {errorMsg}
-      </span>
-    ) : (
-      ''
-    )
-  }
+  const { getStatusElement, setActuallySubmitted } = formSubmissionStatus(form, errorMsg)
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setActuallySubmitted(true)
@@ -120,10 +103,10 @@ export default function ContactForm() {
         <div className='flex flex-row items-center justify-start gap-3'>
           <Button
             type='submit'
-            disabled={(actuallySubmitted && form.formState.isSubmitSuccessful) || form.formState.isSubmitting}>
+            disabled={(setActuallySubmitted() && form.formState.isSubmitSuccessful) || form.formState.isSubmitting}>
             Submit
           </Button>
-          {formSubmissionStatus()}
+          {getStatusElement()}
         </div>
       </form>
     </Form>
