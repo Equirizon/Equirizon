@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button } from '../ui/button'
+import formSubmissionStatus from '@/hooks/formSubmissionStatus'
 
 export default function Projects() {
   type Projects = Array<{
@@ -40,6 +41,7 @@ export default function Projects() {
   })
 
   const [data, setData] = useState<{ data: Projects | null }>({ data: null })
+  const [errorMsg, setErrorMsg] = useState('An error occured.')
 
   useEffect(() => {
     async function fetchProjects() {
@@ -54,19 +56,24 @@ export default function Projects() {
   }, [])
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setActuallySubmitted(true)
     const { error } = await supabase.from('projects').insert(values)
     if (error) {
       console.error('Error adding project:', error)
-      return
+      setErrorMsg('An error occured while adding the project.')
+      throw new Error(error.message)
     }
     setTimeout(() => {
       form.reset()
+      setActuallySubmitted(false)
     }, 3000)
   }
 
+  const { getStatusElement, setActuallySubmitted } = formSubmissionStatus(form, errorMsg)
+
   return (
     <div className='min-h-screen px-4 py-12'>
-      <div className='mx-auto min-w-2xl max-w-4xl'>
+      <div className='mx-auto max-w-4xl min-w-2xl'>
         <h2 className='mb-8 text-center text-3xl font-bold text-gray-900'>Displayed Projects</h2>
         <div className='overflow-hidden rounded-lg bg-white shadow'>
           <table className='min-w-full divide-y divide-gray-200'>
@@ -202,9 +209,12 @@ export default function Projects() {
                 </FormItem>
               )}
             />
+          <div className='flex flex-row items-center justify-start'>
+            <Button type='submit' disabled={(setActuallySubmitted() && form.formState.isSubmitSuccessful) || form.formState.isSubmitting}>
+              Submit
+            </Button>
+            {getStatusElement()}
           </div>
-          <div className='flex flex-row items-center justify-start gap-3 my-3'>
-            <Button type='submit'>Submit</Button>
           </div>
         </form>
       </Form>
