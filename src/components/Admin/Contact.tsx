@@ -23,7 +23,7 @@ export default function Contact() {
         <h2 className='mb-8 text-3xl font-bold text-gray-900 text-center'>Inbox</h2>
         <div className='overflow-hidden rounded-lg bg-white shadow'>
           <table className='min-w-full divide-y divide-gray-200'>
-            <thead className='bg-gray-100'>
+            <thead className='bg-theme-color-primary/40'>
               <tr>
                 <th className='px-6 py-3 text-left text-lg font-semibold text-gray-900'>Name</th>
                 <th className='px-6 py-3 text-left text-lg font-semibold text-gray-900'>Email</th>

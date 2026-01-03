@@ -8,6 +8,8 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button } from '../ui/button'
 import formSubmissionStatus from '@/hooks/formSubmissionStatus'
+import { X } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 export default function Projects() {
   type Projects = Array<{
@@ -62,11 +64,26 @@ export default function Projects() {
       console.error('Error adding project:', error)
       setErrorMsg('An error occured while adding the project.')
       throw new Error(error.message)
+    } else {
+      setData((prevData) => ({
+        data: prevData.data ? [...prevData.data, values] : [values],
+      }))
     }
     setTimeout(() => {
       form.reset()
       setActuallySubmitted(false)
     }, 3000)
+  }
+
+  async function deleteProject(title: string) {
+    const { error } = await supabase.from('projects').delete().eq('title', title)
+    if (error) {
+      console.error('Error deleting project:', error)
+    } else {
+      setData((prevData) => ({
+        data: prevData.data?.filter((project) => project.title !== title) || null,
+      }))
+    }
   }
 
   const { getStatusElement, setActuallySubmitted } = formSubmissionStatus(form, errorMsg)
@@ -75,19 +92,38 @@ export default function Projects() {
     <div className='min-h-screen px-4 py-12'>
       <div className='mx-auto max-w-4xl min-w-2xl'>
         <h2 className='mb-8 text-center text-3xl font-bold text-gray-900'>Displayed Projects</h2>
-        <div className='overflow-hidden rounded-lg bg-white shadow'>
+        <div className='rounded-lg bg-white shadow'>
           <table className='min-w-full divide-y divide-gray-200'>
-            <thead className='bg-gray-100'>
+            <thead className='bg-theme-color-secondary/40'>
               <tr>
-                <th className='px-6 py-3 text-left text-lg font-semibold text-gray-900'>Project</th>
-                <th className='px-6 py-3 text-left text-lg font-semibold text-gray-900'>Description</th>
+                <th className='rounded-tl-lg px-6 py-3 text-left text-lg font-semibold text-gray-900'>Project</th>
+                <th className='rounded-tr-lg px-6 py-3 text-left text-lg font-semibold text-gray-900'>Description</th>
               </tr>
             </thead>
             <tbody className='divide-y divide-gray-200'>
-              {data.data?.map((project) => (
-                <tr key={project.title} className='hover:bg-gray-50'>
-                  <td className='px-6 py-4 text-sm text-gray-900'>{project.title}</td>
-                  <td className='px-6 py-4 text-sm text-gray-600'>{project.description}</td>
+              {data.data?.map((project, index) => (
+                <tr key={project.title} className='group hover:bg-gray-50'>
+                  <td
+                    className={cn(
+                      'px-6 py-4 text-sm text-gray-900',
+                      index + 1 === data.data!.length && 'rounded-b-lg',
+                    )}>
+                    {project.title}
+                  </td>
+                  <td
+                    className={cn(
+                      'relative px-6 py-4 text-sm text-gray-600',
+                      index + 1 === data.data!.length && 'rounded-b-lg',
+                    )}>
+                    {project.description}{' '}
+                    <Button
+                      onClick={() => deleteProject(project.title)}
+                      variant='outline'
+                      size='sm'
+                      className='absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-0 shadow-sm transition-all group-hover:opacity-100 hover:cursor-pointer'>
+                      <X className='text-red-500' strokeWidth={4} />
+                    </Button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -209,12 +245,14 @@ export default function Projects() {
                 </FormItem>
               )}
             />
-          <div className='flex flex-row items-center justify-start'>
-            <Button type='submit' disabled={(setActuallySubmitted() && form.formState.isSubmitSuccessful) || form.formState.isSubmitting}>
-              Submit
-            </Button>
-            {getStatusElement()}
-          </div>
+            <div className='flex flex-row items-center justify-start gap-4 pt-4'>
+              <Button
+                type='submit'
+                disabled={(setActuallySubmitted() && form.formState.isSubmitSuccessful) || form.formState.isSubmitting}>
+                Submit
+              </Button>
+              {getStatusElement()}
+            </div>
           </div>
         </form>
       </Form>
