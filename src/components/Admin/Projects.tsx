@@ -3,6 +3,17 @@
 import { supabase } from '@/utils/supabase/client'
 import { useEffect, useState } from 'react'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -86,7 +97,7 @@ export default function Projects() {
     }
   }
 
-  const { getStatusElement, setActuallySubmitted } = formSubmissionStatus(form, errorMsg)
+  const { getStatusElement, setActuallySubmitted } = formSubmissionStatus(form, errorMsg, 'Project added successfully!')
 
   return (
     <div className='min-h-screen px-4 py-12'>
@@ -116,13 +127,33 @@ export default function Projects() {
                       index + 1 === data.data!.length && 'rounded-b-lg',
                     )}>
                     {project.description}{' '}
-                    <Button
-                      onClick={() => deleteProject(project.title)}
-                      variant='outline'
-                      size='sm'
-                      className='absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-0 shadow-sm transition-all group-hover:opacity-100 hover:cursor-pointer'>
-                      <X className='text-red-500' strokeWidth={4} />
-                    </Button>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button
+                          variant='outline'
+                          size='sm'
+                          className='absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-0 shadow-sm transition-all group-hover:opacity-100 hover:cursor-pointer'>
+                          <X className='text-red-500' strokeWidth={4} />
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>Confirm Deletion</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            Are you sure you want to delete the project &quot;{<b>{project.title}</b>}&quot;? This
+                            action cannot be undone.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel>Cancel</AlertDialogCancel>
+                          <AlertDialogAction
+                            className='bg-red-600 hover:bg-red-700 focus:ring-red-600'
+                            onClick={() => deleteProject(project.title)}>
+                            Delete
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   </td>
                 </tr>
               ))}
