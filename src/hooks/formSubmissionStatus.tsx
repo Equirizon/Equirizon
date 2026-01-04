@@ -18,6 +18,7 @@ import { useState, type JSX } from 'react'
 export default function formSubmissionStatus(
   form: any,
   errorMsg: string,
+  successMsg: string = 'Submitted!',
 ): {
   getStatusElement(): JSX.Element | ''
   setActuallySubmitted(value?: boolean): boolean
@@ -28,7 +29,7 @@ export default function formSubmissionStatus(
     getStatusElement() {
       return state.isSubmitSuccessful && !state.isSubmitting ? (
         <span className='animate-pop-in-out flex flex-row items-center gap-2 text-sm font-semibold text-green-700'>
-          <Check className='animate-pop-in-out stroke-green-700' /> Submitted!
+          <Check className='animate-pop-in-out stroke-green-700' /> {successMsg}
         </span>
       ) : state.isSubmitting ? (
         <LoaderCircle className='stroke-muted-foreground animate-spin' />
