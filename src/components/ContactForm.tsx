@@ -9,7 +9,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input'
 import { supabase } from '@/utils/supabase/client'
 import { Textarea } from './ui/textarea'
-import { Check, LoaderCircle, X } from 'lucide-react'
 import { useState } from 'react'
 import formSubmissionStatus from '@/hooks/formSubmissionStatus'
 

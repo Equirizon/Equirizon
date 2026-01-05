@@ -30,6 +30,7 @@ export default defineConfig({
     schema: {
       SUPABASE_URL: envField.string({ context: 'client', access: 'public' }),
       SUPABASE_ANON_KEY: envField.string({ context: 'client', access: 'public' }),
+      TOTP_SECRET: envField.string({ context: 'server', access: 'secret' }),
       APP_MODE: envField.enum({
         values: ['development', 'preview', 'production'],
         context: 'client',
