@@ -21,6 +21,7 @@ import { Button } from '../ui/button'
 import formSubmissionStatus from '@/hooks/formSubmissionStatus'
 import { X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { actions } from 'astro:actions'
 
 export default function Projects() {
   type Projects = Array<{
@@ -97,11 +98,25 @@ export default function Projects() {
     }
   }
 
-  const { getStatusElement, setActuallySubmitted } = formSubmissionStatus(form, errorMsg, 'Project added successfully!')
+  const { getStatusElement, setActuallySubmitted } = formSubmissionStatus(form, errorMsg, 'Project added!')
 
   return (
-    <div className='min-h-screen px-4 py-12'>
-      <div className='mx-auto max-w-4xl min-w-2xl'>
+    <>
+      <Button
+        variant='outline'
+        size='sm'
+        className='fixed top-4 right-4'
+        onClick={async () => {
+          const { error } = await actions.logout()
+          if (error) {
+            console.error('Logout failed:', error)
+            return
+          }
+          window.location.href = '/admin/'
+        }}>
+        Logout
+      </Button>
+      <div className='mx-auto w-[min(90%,40rem))] py-8 md:max-w-4xl'>
         <h2 className='mb-8 text-center text-3xl font-bold text-gray-900'>Displayed Projects</h2>
         <div className='rounded-lg bg-white shadow'>
           <table className='min-w-full divide-y divide-gray-200'>
@@ -161,9 +176,10 @@ export default function Projects() {
           </table>
         </div>
       </div>
-
       <Form {...form}>
-        <form className='mt-12 rounded-lg bg-white p-8 shadow' onSubmit={form.handleSubmit(onSubmit)}>
+        <form
+          className='mx-auto w-[min(90%,40rem))] rounded-lg bg-white p-6 shadow'
+          onSubmit={form.handleSubmit(onSubmit)}>
           <h3 className='mb-6 text-2xl font-bold text-gray-900'>Add New Project</h3>
           <div className='flex flex-col gap-4'>
             <FormField
@@ -287,6 +303,6 @@ export default function Projects() {
           </div>
         </form>
       </Form>
-    </div>
+    </>
   )
 }

@@ -1,9 +1,9 @@
 ---
 export const prerender = false
 import AdminLayout from '@/layouts/AdminLayout.astro'
-import Auth from '@/auth/Auth'
+import AuthPage from '@/auth/Auth'
 ---
 
 <AdminLayout>
-  <Auth client:only='react' />
+  <AuthPage client:only='react' />
 </AdminLayout>

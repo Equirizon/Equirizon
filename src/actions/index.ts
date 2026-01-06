@@ -24,4 +24,12 @@ export const server = {
       })
     },
   }),
+
+  logout: defineAction({
+    handler: async (_input, context) => {
+      context.cookies.delete('admin', {
+        path: '/',
+      })
+    },
+  }),
 }
