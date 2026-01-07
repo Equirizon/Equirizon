@@ -1,6 +1,9 @@
 import { defineMiddleware } from 'astro:middleware'
 
 export const onRequest = defineMiddleware((context, next) => {
+  if (!context.url.pathname.startsWith('/admin')) {
+    return next()
+  }
   const route = context.url.pathname
   const isAdmin = context.cookies.get('admin')
   if (!isAdmin && /^\/admin[\/]*$/.test(route)) {
