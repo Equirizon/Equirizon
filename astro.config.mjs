@@ -11,8 +11,10 @@ import cloudflare from '@astrojs/cloudflare'
 export default defineConfig({
   integrations: [react()],
 
+  output: 'server',
+  adapter: cloudflare(),
+
   vite: {
-    output: 'server',
     plugins: [tailwindcss()],
     resolve: {
       // Use react-dom/server.edge instead of react-dom/server.browser for React 19.
@@ -23,8 +25,6 @@ export default defineConfig({
       },
     },
   },
-
-  adapter: cloudflare(),
 
   env: {
     schema: {
