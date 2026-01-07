@@ -26,7 +26,7 @@ export default defineConfig({
         : {},
       },
       ssr: {
-        external: ['node:condition-hooks', 'node:worker_threads'],
+        external: ['node:crypto', 'node:condition-hooks', 'node:worker_threads'],
       },
   },
 

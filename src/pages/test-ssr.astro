@@ -1,8 +1,11 @@
 ---
-export const prerender = false
-throw new Error("Testing logs")
+export const prerender = false;
+// No imports, no React components, no logic.
 ---
-
-<h1>SSR is working</h1>
-<p>Time: {new Date().toISOString()}</p>
-<p>This page is rendered on each request.</p>
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Plumbing Test</h1>
+    <p>If you see this, the Worker is alive.</p>
+  </body>
+</html>
