@@ -1,30 +1,35 @@
 // @ts-check
 import { defineConfig, envField } from 'astro/config'
-
 import react from '@astrojs/react'
-
 import tailwindcss from '@tailwindcss/vite'
-
 import cloudflare from '@astrojs/cloudflare'
 
-// https://astro.build/config
+const isBuilding = process.env.NODE_ENV === 'production' || process.argv.includes('build')
+
 export default defineConfig({
   integrations: [react()],
 
+  adapter: cloudflare({
+    platformProxy: { enabled: true },
+  }),
+
+  // 2. output: 'static' is default, but ensuring hybrid mode works
+  output: 'static',
+
   vite: {
-    output: 'server',
     plugins: [tailwindcss()],
     resolve: {
-      // Use react-dom/server.edge instead of react-dom/server.browser for React 19.
-      // Without this, MessageChannel from node:worker_threads needs to be polyfilled.
-      // @ts-expect-error: https://github.com/withastro/astro/issues/12824
-      alias: import.meta.env.PROD && {
-        'react-dom/server': 'react-dom/server.edge',
-      },
+      alias: isBuilding
+        ? {
+            'react-dom/server': 'react-dom/server.edge',
+            crypto: 'node:crypto',
+          }
+        : {},
+    },
+    ssr: {
+      external: ['node:crypto', 'crypto', 'node:worker_threads', 'node:condition-hooks'],
     },
   },
-
-  adapter: cloudflare(),
 
   env: {
     schema: {
