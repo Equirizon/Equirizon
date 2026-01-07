@@ -27,8 +27,7 @@ export default defineConfig({
         : {},
     },
     ssr: {
-      noExternal: isBuilding ? ['@otplib/plugin-crypto'] : [],
-      external: ['node:crypto', 'node:worker_threads', 'node:condition-hooks'],
+      external: ['node:crypto', 'crypto', 'node:worker_threads', 'node:condition-hooks'],
     },
   },
 
