@@ -2,6 +2,9 @@ import { defineAction } from 'astro:actions'
 import { z } from 'astro/zod'
 import { authenticator } from 'otplib'
 import { TOTP_SECRET } from 'astro:env/server'
+import rateLimit from '@/utils/rateLimiter'
+
+const checkBucket = rateLimit({ capacity: 5, refillRate: 0.5, timeout: 1000 * 300 /* 5mins */ })
 
 export const server = {
   checkOTP: defineAction({
@@ -10,6 +13,9 @@ export const server = {
       otp: z.string(),
     }),
     handler: async ({ otp }, context) => {
+      if (!checkBucket()) {
+        throw new Error('Rate limited.')
+      }
       const secret = TOTP_SECRET
       const token = otp
       const isValid = authenticator.check(token, secret)
