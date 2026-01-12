@@ -26,7 +26,7 @@ export const server = {
         secure: true,
         sameSite: 'strict',
         path: '/',
-        maxAge: 60 * 60, // 1 hour
+        maxAge: 60 * 30, // 30 minutes
       })
     },
   }),
